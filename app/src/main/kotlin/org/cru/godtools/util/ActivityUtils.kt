@@ -1,0 +1,59 @@
+package org.cru.godtools.util
+
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import java.util.Locale
+import org.cru.godtools.base.tool.createLessonActivityIntent
+import org.cru.godtools.base.tool.startLessonActivity
+import org.cru.godtools.base.ui.createArticlesIntent
+import org.cru.godtools.base.ui.createCyoaActivityIntent
+import org.cru.godtools.base.ui.createTractActivityIntent
+import org.cru.godtools.base.ui.startArticlesActivity
+import org.cru.godtools.base.ui.startCyoaActivity
+import org.cru.godtools.base.ui.startTractActivity
+import org.cru.godtools.model.Tool
+import org.cru.godtools.model.Tool.Type
+
+fun Activity.openToolActivity(code: String, type: Type, vararg languages: Locale, showTips: Boolean = false) =
+    when (type) {
+        Type.TRACT -> startTractActivity(code, *languages, showTips = showTips)
+        Type.ARTICLE -> startArticlesActivity(code, languages[0])
+        Type.CYOA -> startCyoaActivity(code, *languages, showTips = showTips)
+        Type.LESSON -> startLessonActivity(code, languages[0])
+        Type.META, Type.UNKNOWN -> Unit
+    }
+
+fun Tool.createToolIntent(
+    context: Context,
+    languages: List<Locale>,
+    activeLocale: Locale? = null,
+    showTips: Boolean = false,
+    saveLanguageSettings: Boolean = false,
+    resumeProgress: Boolean = false
+): Intent? {
+    val code = code ?: return null
+    if (languages.isEmpty()) return null
+
+    return when (type) {
+        Type.TRACT -> context.createTractActivityIntent(
+            code,
+            *languages.toTypedArray(),
+            activeLocale = activeLocale,
+            showTips = showTips,
+            saveLanguageSettings = saveLanguageSettings,
+        )
+        Type.ARTICLE -> context.createArticlesIntent(code, languages[0])
+        Type.CYOA -> context.createCyoaActivityIntent(
+            code,
+            *languages.toTypedArray(),
+            saveLanguageSettings = saveLanguageSettings
+        )
+        Type.LESSON -> context.createLessonActivityIntent(
+            code,
+            languages[0],
+            resumePageId = progressLastPageId.takeIf { resumeProgress }
+        )
+        Type.META, Type.UNKNOWN -> null
+    }
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- optInNotification -->
+    <string name="opt_in_notification_title">احصل على نصائح وتشجيع</string>
+    <string name="opt_in_notification_body">كن مستعدًا للمحادثات. فعّل الإشعارات اليوم.</string>
+    <string name="opt_in_notification_allow_notifications">السماح بالإخطارات</string>
+    <string name="opt_in_notification_notification_settings">إعدادات الإشعارات</string>
+    <string name="opt_in_notification_maybe_later">ربما لاحقاً</string>
+    <!-- Navigation Menu -->
+    <string name="menu_heading_get_started">ابدأ</string>
+    <string name="menu_tutorial">شرح</string>
+    <string name="menu_heading_account">حساب</string>
+    <string name="menu_login">تسجيل الدخول</string>
+    <string name="menu_signup">إنشاء حساب</string>
+    <string name="menu_logout">تسجيل الخروج</string>
+    <string name="menu_heading_support">دعم</string>
+    <string name="menu_feedback">ارسل رأيك</string>
+    <string name="menu_report_bug">الإبلاغ عن خطأ</string>
+    <string name="menu_question">طرح سؤال</string>
+    <string name="menu_heading_share">شارك</string>
+    <string name="menu_review">ترك تعليق</string>
+    <string name="menu_share_story">شارك قصة معنا</string>
+    <string name="menu_share_godtools">شارك تطبيق GodTools</string>
+    <string name="share_app_message">حمل تطبيق GodTools:
+https://godtoolsapp.com \n\n
+
+يمكن العثور على إصدار الإنترنت على https://knowgod.com/</string>
+    <string name="share_story_subject">قصة GodTools</string>
+    <string name="menu_heading_about">حول</string>
+    <string name="menu_terms_of_use">شروط الاستخدام</string>
+    <string name="menu_privacy_policy">سياسة الخصوصية</string>
+    <string name="menu_copyright">حق النشر والتأليف</string>
+    <string name="menu_version">الإصدار: %1$s(%2$d)</string>
+    <!-- Lessons -->
+    <string name="nav_lessons">الدروس</string>
+    <string name="dashboard_lessons_header_title">الدروس المُعدة لأجلك</string>
+    <string name="dashboard_lessons_header_description">أفكار عملية لبناء علاقات وبدء محادثات هادفة.</string>
+    <string name="dashboard_lessons_section_filter_label">دروس في:</string>
+    <plurals name="dashboard_lessons_section_filter_available_lessons">
+        <item quantity="zero">الدروس متوفرة %1$d</item>
+        <item quantity="one">الدروس متوفرة %1$d</item>
+        <item quantity="two">الدروس متوفرة %1$d</item>
+        <item quantity="few">الدروس متوفرة %1$d</item>
+        <item quantity="many">الدروس متوفرة %1$d</item>
+        <item quantity="other">الدروس متوفرة %1$d</item>
+    </plurals>
+    <string name="dashboard_lessons_progress_completed">تم</string>
+    <string name="dashboard_lessons_progress_in_progress">%1$d%% اكتمل</string>
+    <!-- Home -->
+    <string name="nav_favorite_tools">المفضلة</string>
+    <string name="dashboard_home_header_title">مرحبًا بك في GodTools</string>
+    <string name="dashboard_home_section_featured_lesson">الدرس المميّز</string>
+    <string name="dashboard_home_section_favorites_title">أدواتك المفضلة</string>
+    <string name="dashboard_home_section_favorites_no_tools_title">لا توجد أدوات مفضلة للعرض</string>
+    <string name="dashboard_home_section_favorites_no_tools_description">اضغط على أيقونة القلب لتقوم بتفضيل أداة وجعلها متاحة في وضع عدم الاتصال.</string>
+    <string name="dashboard_home_section_favorites_action_view_all">مشاهدة الكل &gt;</string>
+    <string name="dashboard_home_section_favorites_action_all_tools">ذهاب إلى الأدوات</string>
+    <string name="tools_list_favorites_banner_text">اجعل الأداة متوفرة في وضع عدم الاتصال عبر النقر على أيقونة القلب الذي يضيفها إلى المفضلة.</string>
+    <string name="tools_list_favorites_banner_action_dismiss">تجاهل</string>
+    <!-- All Tools -->
+    <string name="nav_all_tools">الأدوات</string>
+    <string name="dashboard_tools_section_filter_label">فلتر</string>
+    <string name="dashboard_tools_section_filter_category_any">أي فئة:</string>
+    <string name="dashboard_tools_section_filter_language_any">أي لغة:</string>
+    <plurals name="dashboard_tools_section_filter_available_tools">
+        <item quantity="zero">لا بوجد أدوات متوفرة</item>
+        <item quantity="one">%1$d أداة متوفرة</item>
+        <item quantity="two">%1$d أدواتين متوفرة</item>
+        <item quantity="few">%1$d أدوات متوفرة</item>
+        <item quantity="many">%1$d أداة متوفرة</item>
+        <item quantity="other">%1$d أدوات متاحة</item>
+    </plurals>
+    <string name="dashboard_tools_section_filter_available_tools_all">جميع الأدوات المتاحة</string>
+    <string name="dashboard_tools_section_categories_label">الفئات</string>
+    <string name="dashboard_tools_section_categories_all">كل الأدوات</string>
+    <string name="dashboard_tools_section_spotlight_label">تسليط الضوء على الأداة</string>
+    <string name="dashboard_tools_section_spotlight_description">إليك بعض الأدوات التي نعتقد أنها قد تنال إعجابك</string>
+    <!-- Tool Cards -->
+    <string name="tools_list_remove_favorite_dialog_title">إزالة “%1$s” من المفضلة؟</string>
+    <string name="tools_list_remove_favorite_dialog_confirm">إزالة</string>
+    <string name="tools_list_remove_favorite_dialog_dismiss">إلغاء</string>
+    <string name="tool_card_accessibility_language_available">متاح</string>
+    <string name="tool_card_accessibility_language_unavailable">غير متوفر </string>
+    <string name="action_tools_about">التفاصيل</string>
+    <string name="action_tools_open">فتح</string>
+    <!-- In App Update -->
+    <string name="play_update_available">التحديث متاح</string>
+    <string name="play_update_available_action">تحميل</string>
+    <string name="play_update_downloaded">تم تنزيل التحديث</string>
+    <string name="play_update_downloaded_action">إعادة تحميل</string>
+</resources>

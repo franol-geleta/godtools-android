@@ -1,0 +1,68 @@
+{
+  "extends": [
+    "config:recommended"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "groupName": "Kotlin",
+      "description": "Kotlin and Mockposable are tightly coupled.",
+      "matchPackageNames": [
+        "com.jeppeman.mockposable{/,}**",
+        "com.jeppeman.mockposable:mockposable-gradle{/,}**",
+        "org.jetbrains.kotlin:kotlin{/,}**",
+        "org.jetbrains.kotlin.plugin.compose{/,}**"
+      ]
+    },
+    {
+      "matchManagers": [
+        "gradle"
+      ],
+      "matchPackageNames": [
+        "com.google.guava:guava"
+      ],
+      "allowedVersions": "!/-jre$/"
+    },
+    {
+      "matchManagers": [
+        "gradle"
+      ],
+      "groupName": "firebase-appdistribution",
+      "matchPackageNames": [
+        "com.google.firebase:firebase-appdistribution{/,}**"
+      ]
+    },
+    {
+      "groupName": "firebase-crashlytics",
+      "matchManagers": [
+        "gradle"
+      ],
+      "matchPackageNames": [
+        "com.google.firebase:firebase-crashlytics{/,}**",
+        "com.google.firebase.crashlytics{/,}**"
+      ]
+    },
+    {
+      "matchManagers": [
+        "gradle"
+      ],
+      "groupName": "firebase-inappmessaging",
+      "matchPackageNames": [
+        "com.google.firebase:firebase-inappmessaging{/,}**"
+      ]
+    },
+    {
+      "matchManagers": [
+        "gradle"
+      ],
+      "groupName": "firebase-perf",
+      "matchPackageNames": [
+        "com.google.firebase:firebase-perf{/,}**",
+        "com.google.firebase:perf-plugin{/,}**"
+      ]
+    }
+  ]
+}

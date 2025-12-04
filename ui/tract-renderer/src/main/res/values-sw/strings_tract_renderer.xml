@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_install">Sanikisha</string>
+    <string name="menu_share_tract">Tuma zana hii</string>
+    <string name="tract_card_previous">Iliyopita</string>
+    <string name="tract_card_next">Ifuatayo</string>
+    <!-- Live Sharing -->
+    <string name="menu_live_share_publish">Shirikisha skrini yako</string>
+    <string name="menu_live_share_active">Sasa Unashirikisha Skrini</string>
+    <string name="share_tool_message_tract_live_share">Habari, Fuatana na mimi kwenye GodTools kupitia skrini iliyoshirikishwa. Kiungo ni hiki: %1$s\n\nKama mpaka baadae hautopokea ujumbe huu, basi kiungo kinaweza kuwa hakifanyi kazi. Tunaweza kujaribu tena wakati mwingine.</string>
+    <string name="tract_live_share_starting">Anza Kushirkisha Skrini</string>
+    <string name="tract_live_share_unable_to_connect">Imeshindwa kuunganisha kwenye kitufe cha Shirikisha Skrini</string>
+    <string name="tract_live_share_exit_dialog_message">Sasa unataka kutoka kwenye kipindi cha kushirikisha kwa mbali? </string>
+    <string name="tract_live_share_exit_dialog_confirm">Toka</string>
+    <string name="tract_live_share_exit_dialog_cancel">Ghairi</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_install">Install</string>
+    <string name="menu_share_tract">Send this tool</string>
+
+    <string name="tract_card_previous">Previous</string>
+    <string name="tract_card_next">Next</string>
+    <string name="tract_card_position" translatable="false">%1$d/%2$d</string>
+
+    <!-- Live Sharing -->
+    <eat-comment />
+    <string name="menu_live_share_publish">Share your screen</string>
+    <string name="menu_live_share_active">Screen Sharing Active</string>
+    <string name="share_tool_message_tract_live_share">Hi, Follow along with me in GodTools via screen sharing. Here\'s the link:   %1$s\n\nIf you don\'t receive this message until later, the link may not still work. We can try again at another time.</string>
+    <string name="tract_live_share_starting">Starting Screen Sharing…</string>
+    <string name="tract_live_share_unable_to_connect">Unable to connect to Screen Sharing</string>
+    <string name="tract_live_share_exit_dialog_message">Exit the remote sharing session now?</string>
+    <string name="tract_live_share_exit_dialog_confirm">Exit</string>
+    <string name="tract_live_share_exit_dialog_cancel">Cancel</string>
+</resources>

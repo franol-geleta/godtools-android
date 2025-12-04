@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tool Details UI -->
+    <string name="menu_add_to_home">Añadir a pantalla de inicio</string>
+    <string name="action_tools_open_tool">Abrir herramienta</string>
+    <string name="action_tools_add_favorite">Añadir a favoritos</string>
+    <string name="action_tools_remove_favorite">Eliminar de favoritos</string>
+    <string name="action_tools_open_training">Aprende cómo compartir esta herramienta</string>
+    <plurals name="label_tools_shares">
+        <item quantity="one">%1$,d vista</item>
+        <item quantity="other">%1$,d vistas</item>
+    </plurals>
+    <string name="label_tools_about">Acerca de</string>
+    <plurals name="label_tools_languages">
+        <item quantity="one">%1$,d idioma</item>
+        <item quantity="other">%1$,d idiomas</item>
+    </plurals>
+    <string name="tool_details_section_description_conversation_starters">Iniciador de Conversaciones</string>
+    <string name="tool_details_section_description_outline">Esquema</string>
+    <string name="tool_details_section_description_bible_references">Referencias Bíblicas</string>
+    <string name="tool_details_section_description_languages_available">Idiomas disponibles</string>
+    <string name="tool_details_section_variants_label">Versiones</string>
+    <string name="tool_details_section_variants_description">Elija una versión diferente de esta herramienta a continuación. Cada versión tiene un estilo y un contenido únicos para que puedas encontrar la que mejor se adapte a tu conversación. Puedes marcar como favoritas varias versiones de la misma herramienta.</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_unable_to_launch_activity">No se puede abrir %s</string>
+    <!-- Tool Categories -->
+    <string name="tool_category_gospel">Invitación al Evangelio</string>
+    <string name="tool_category_articles">Artículos</string>
+    <string name="tool_category_conversation_starter">Iniciar conversación</string>
+    <string name="tool_category_growth">Crecimiento Cristiano</string>
+    <string name="tool_category_training">Formación</string>
+    <!-- Sharing -->
+</resources>

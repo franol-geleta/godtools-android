@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_unable_to_launch_activity">%s को खोला नहीं जा सका</string>
+    <!-- Tool Categories -->
+    <string name="tool_category_gospel">सुसमाचार आमंत्रण</string>
+    <string name="tool_category_articles">लेख</string>
+    <string name="tool_category_conversation_starter">वार्तालाप शुरुआत</string>
+    <string name="tool_category_growth">मसीही विकास</string>
+    <string name="tool_category_training">प्रशिक्षण</string>
+    <!-- Sharing -->
+</resources>

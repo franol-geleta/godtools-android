@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_unable_to_launch_activity">Không thể mở %s</string>
+    <!-- Tool Categories -->
+    <string name="tool_category_gospel">Lời mời đến với Phúc Âm</string>
+    <string name="tool_category_articles">Bài viết</string>
+    <string name="tool_category_conversation_starter">Bắt đầu cuộc trò chuyện</string>
+    <string name="tool_category_growth">Tăng trưởng trong đời sống Cơ Đốc</string>
+    <string name="tool_category_training">Trang bị</string>
+    <!-- Sharing -->
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="menu_profile">Activity</string>
+    <string name="account_joined">Joined %1$s</string>
+
+    <!-- Create / Login -->
+    <eat-comment />
+    <string name="account_create_heading">Create account</string>
+    <string name="account_create_description">Create an account to have real stories, encouragement, and practical tips at your fingertips.</string>
+    <string name="account_login_heading">Sign in</string>
+    <string name="account_login_description">Log in to your account to have real stories, encouragement, and practical tips at your fingertips.</string>
+    <string name="account_error_title">Authentication Failed</string>
+    <string name="account_error_user_already_exists">User account already exists.</string>
+    <string name="account_error_user_not_found">User account not found.</string>
+    <string name="account_error_not_connected_title">No Internet Connection</string>
+    <string name="account_error_not_connected">Please check your internet connection and try again.</string>
+    <string name="account_error_unknown">Error logging in.</string>
+    <string name="account_error_dialog_dismiss">OK</string>
+
+    <!-- Delete Account -->
+    <eat-comment />
+    <string name="menu_account_delete">Delete Account</string>
+    <string name="account_delete_heading">Don\'t go so soon</string>
+    <string name="account_delete_description">If you delete your account you won\'t be able to access your favorited tools or account activity.</string>
+    <string name="account_delete_action_delete">Delete my account</string>
+    <string name="account_delete_action_cancel">Keep my account</string>
+    <string name="account_delete_error">There was an error deleting your account. Make sure you are online or try again later.</string>
+    <string name="account_delete_error_dismiss">OK</string>
+
+    <!-- Activity -->
+    <eat-comment />
+    <string name="profile_tab_activity">Activity</string>
+    <string name="account_activity_header">Your activity</string>
+    <plurals name="account_activity_tool_opens" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Tool open</item>
+        <item quantity="other">Tool opens</item>
+    </plurals>
+    <plurals name="account_activity_lesson_completions" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Lesson completion</item>
+        <item quantity="other">Lesson completions</item>
+    </plurals>
+    <plurals name="account_activity_screen_shares" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Screen share</item>
+        <item quantity="other">Screen shares</item>
+    </plurals>
+    <plurals name="account_activity_links_shared" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Link shared</item>
+        <item quantity="other">Links shared</item>
+    </plurals>
+    <plurals name="account_activity_languages_used" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Language used</item>
+        <item quantity="other">Languages used</item>
+    </plurals>
+    <plurals name="account_activity_sessions" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Session</item>
+        <item quantity="other">Sessions</item>
+    </plurals>
+
+    <!-- Badges -->
+    <eat-comment />
+    <string name="account_activity_badges_header">Your badges</string>
+    <plurals name="account_activity_badge_tools_opened">
+        <item quantity="one">Opened %1$,d tool</item>
+        <item quantity="other">Opened %1$,d tools</item>
+    </plurals>
+    <plurals name="account_activity_badge_lessons_completed">
+        <item quantity="one">Completed %1$,d lesson</item>
+        <item quantity="other">Completed %1$,d lessons</item>
+    </plurals>
+    <plurals name="account_activity_badge_articles_opened">
+        <item quantity="one">Opened %1$,d article</item>
+        <item quantity="other">Opened %1$,d articles</item>
+    </plurals>
+    <plurals name="account_activity_badge_images_shared">
+        <item quantity="one">Shared %1$,d image</item>
+        <item quantity="other">Shared %1$,d images</item>
+    </plurals>
+    <plurals name="account_activity_badge_tips_completed">
+        <item quantity="one">Completed %1$,d training tip</item>
+        <item quantity="other">Completed %1$,d training tips</item>
+    </plurals>
+
+    <!-- Global Activity -->
+    <eat-comment />
+    <string name="account_tab_global_activity">Global Activity</string>
+    <string name="profile_global_activity_heading">%1$s Global Activity</string>
+    <string name="profile_activity_unique_users">Unique Users</string>
+    <string name="profile_activity_gospel_presentations">Gospel Presentations</string>
+    <string name="profile_activity_sessions">Sessions</string>
+    <string name="profile_activity_countries">Countries</string>
+</resources>

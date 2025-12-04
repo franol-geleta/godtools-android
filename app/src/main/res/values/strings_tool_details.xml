@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tool Details UI -->
+    <eat-comment />
+    <string name="menu_add_to_home">Add to Home screen</string>
+    <string name="action_tools_open_tool">Open Tool</string>
+    <string name="action_tools_add_favorite">Add to Favorites</string>
+    <string name="action_tools_remove_favorite">Remove from Favorites</string>
+    <string name="action_tools_open_training">Learn to share this tool</string>
+    <plurals name="label_tools_shares">
+        <item quantity="one">%1$,d View</item>
+        <item quantity="other">%1$,d Views</item>
+    </plurals>
+    <string name="label_tools_about">About</string>
+    <plurals name="label_tools_languages">
+        <item quantity="one">%1$,d Language</item>
+        <item quantity="other">%1$,d Languages</item>
+    </plurals>
+    <string name="tool_details_section_description_conversation_starters">Conversation starters</string>
+    <string name="tool_details_section_description_outline">Outline</string>
+    <string name="tool_details_section_description_bible_references">Bible references</string>
+    <string name="tool_details_section_description_languages_available">Languages available</string>
+    <string name="tool_details_section_variants_label">Versions</string>
+    <string name="tool_details_section_variants_description">Choose a different version of this tool below. Each version features unique style and content so you can find the one that is best for your conversation. You can favorite multiple versions of the same tool.</string>
+</resources>

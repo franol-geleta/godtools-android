@@ -1,0 +1,580 @@
+package org.cru.godtools.ui.tools
+
+import android.app.Application
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.jeppeman.mockposable.mockk.everyComposable
+import com.slack.circuit.test.TestEventSink
+import com.slack.circuit.test.presenterTestOf
+import io.mockk.Called
+import io.mockk.coEvery
+import io.mockk.coVerifyAll
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
+import io.mockk.verifyAll
+import java.io.File
+import java.util.Locale
+import kotlin.random.Random
+import kotlin.test.AfterTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertIs
+import kotlin.test.assertNotNull
+import kotlin.test.assertNull
+import kotlin.test.assertTrue
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import org.ccci.gto.android.common.androidx.compose.ui.platform.AndroidUiDispatcherUtil
+import org.cru.godtools.base.Settings
+import org.cru.godtools.base.ToolFileSystem
+import org.cru.godtools.db.repository.AttachmentsRepository
+import org.cru.godtools.db.repository.LanguagesRepository
+import org.cru.godtools.db.repository.ToolsRepository
+import org.cru.godtools.db.repository.TranslationsRepository
+import org.cru.godtools.db.repository.UserCountersRepository
+import org.cru.godtools.model.Attachment
+import org.cru.godtools.model.Language
+import org.cru.godtools.model.Tool
+import org.cru.godtools.model.Translation
+import org.cru.godtools.model.UserCounter
+import org.cru.godtools.model.randomTool
+import org.cru.godtools.model.randomTranslation
+import org.cru.godtools.shared.user.activity.UserCounterNames.LESSON_COMPLETION
+import org.junit.runner.RunWith
+import org.robolectric.annotation.Config
+
+private const val TOOL = "tool"
+private const val BANNER_ID = 1L
+
+@RunWith(AndroidJUnit4::class)
+@Config(application = Application::class)
+class ToolCardPresenterTest {
+    private val appLocaleState = mutableStateOf(Locale.ENGLISH)
+    private val toolFlow = MutableStateFlow(randomTool(TOOL, bannerId = BANNER_ID))
+    private val bannerFlow = MutableSharedFlow<Attachment?>(extraBufferCapacity = 1)
+    private val frLanguageFlow = MutableSharedFlow<Language?>(extraBufferCapacity = 1)
+    private val enTranslationFlow = MutableSharedFlow<Translation?>(extraBufferCapacity = 1)
+    private val frTranslationFlow = MutableSharedFlow<Translation?>(extraBufferCapacity = 1)
+
+    private val fileSystem: ToolFileSystem = mockk()
+    private val settings: Settings = mockk {
+        everyComposable { produceAppLocaleState() } returns appLocaleState
+    }
+
+    private val attachmentsRepository: AttachmentsRepository = mockk {
+        every { findAttachmentFlow(any()) } returns flowOf(null)
+        every { findAttachmentFlow(BANNER_ID) } returns bannerFlow
+    }
+    private val languagesRepository: LanguagesRepository = mockk {
+        every { findLanguageFlow(any()) } returns flowOf(null)
+        every { findLanguageFlow(Locale.FRENCH) } returns frLanguageFlow
+    }
+    private val toolsRepository: ToolsRepository = mockk(relaxUnitFun = true)
+    private val translationsRepository: TranslationsRepository = mockk {
+        every { findLatestTranslationFlow(TOOL, any()) } returns flowOf(null)
+        every { findLatestTranslationFlow(TOOL, Locale.ENGLISH) } returns enTranslationFlow
+        every { findLatestTranslationFlow(TOOL, Locale.FRENCH) } returns frTranslationFlow
+    }
+    private val userCountersRepository: UserCountersRepository = mockk {
+        every { findCounterFlow(any()) } returns flowOf(null)
+    }
+    private val events = TestEventSink<ToolCard.Event>()
+
+    private val presenter = ToolCardPresenter(
+        fileSystem = fileSystem,
+        settings = settings,
+        attachmentsRepository = attachmentsRepository,
+        languagesRepository = languagesRepository,
+        toolsRepository = toolsRepository,
+        translationsRepository = translationsRepository,
+        userCountersRepository = userCountersRepository,
+    )
+
+    @AfterTest
+    fun cleanup() = AndroidUiDispatcherUtil.runScheduledDispatches()
+
+    // region ToolCard.State.tool
+    @Test
+    fun `ToolCardState - tool`() = runTest {
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            assertEquals(toolFlow.value, expectMostRecentItem().tool)
+        }
+    }
+
+    @Test
+    fun `ToolCardState - tool - emit new state on update`() = runTest {
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            assertEquals(toolFlow.value, expectMostRecentItem().tool)
+
+            toolFlow.value = randomTool(TOOL)
+            assertEquals(toolFlow.value, expectMostRecentItem().tool)
+        }
+    }
+    // endregion ToolCard.State.tool
+
+    // region ToolCard.State.banner
+    @Test
+    fun `ToolCardState - banner`() = runTest {
+        val banner = Attachment(BANNER_ID) {
+            sha256 = "0123456789abcdef"
+            isDownloaded = true
+        }
+
+        val file = File.createTempFile("tmp", null)
+        coEvery { banner.getFile(fileSystem) } returns file
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            bannerFlow.emit(banner)
+            assertEquals(file, expectMostRecentItem().banner)
+        }
+    }
+
+    @Test
+    fun `ToolCardState - banner - don't return banners not downloaded yet`() = runTest {
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            bannerFlow.emit(
+                Attachment(BANNER_ID) {
+                    sha256 = "0123456789abcdef"
+                    isDownloaded = false
+                }
+            )
+            assertNull(expectMostRecentItem().banner)
+        }
+
+        verifyAll {
+            attachmentsRepository.findAttachmentFlow(BANNER_ID)
+            fileSystem wasNot Called
+        }
+    }
+
+    @Test
+    fun `ToolCardState - banner - emit new state on Attachment update`() = runTest {
+        val banner = Attachment(BANNER_ID) {
+            sha256 = "0123456789abcdef"
+            isDownloaded = true
+        }
+
+        val file = File.createTempFile("tmp", null)
+        coEvery { banner.getFile(fileSystem) } returns file
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            bannerFlow.emit(Attachment(BANNER_ID) { isDownloaded = false })
+            assertNull(expectMostRecentItem().banner)
+
+            bannerFlow.emit(banner)
+            assertEquals(file, expectMostRecentItem().banner)
+        }
+    }
+    // endregion ToolCard.State.banner
+
+    // region ToolCard.State.isLoaded
+    @Test
+    fun `ToolCardState - isLoaded`() = runTest {
+        toolFlow.value = randomTool(TOOL, defaultLocale = Locale.FRENCH)
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            assertFalse(expectMostRecentItem().isLoaded)
+
+            // emit translation for default language
+            frTranslationFlow.emit(randomTranslation(TOOL, Locale.FRENCH))
+            expectNoEvents()
+
+            // emit translation for app language
+            enTranslationFlow.emit(randomTranslation(TOOL, Locale.ENGLISH))
+            assertTrue(expectMostRecentItem().isLoaded)
+        }
+    }
+    // endregion ToolCard.State.isLoaded
+
+    // region ToolCard.State.translation
+    @Test
+    fun `ToolCardState - translation`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        appLocaleState.value = Locale.FRENCH
+        val translation = randomTranslation(TOOL, Locale.FRENCH)
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            frTranslationFlow.emit(translation)
+
+            val state = expectMostRecentItem()
+            assertTrue(state.isLoaded)
+            assertEquals(translation, state.translation)
+        }
+    }
+
+    @Test
+    fun `ToolCardState - translation - fallback to default language`() = runTest {
+        toolFlow.value = randomTool(TOOL, defaultLocale = Locale.ENGLISH)
+        appLocaleState.value = Locale.FRENCH
+        val translation = randomTranslation(TOOL, Locale.ENGLISH)
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            frTranslationFlow.emit(null)
+            enTranslationFlow.emit(translation)
+
+            val state = expectMostRecentItem()
+            assertTrue(state.isLoaded)
+            assertEquals(translation, state.translation)
+        }
+    }
+
+    @Test
+    fun `ToolCardState - translation - don't emit fallback if primary hasn't loaded yet`() = runTest {
+        toolFlow.value = randomTool(TOOL, defaultLocale = Locale.ENGLISH)
+        appLocaleState.value = Locale.FRENCH
+        val translation = randomTranslation(TOOL, Locale.ENGLISH)
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            enTranslationFlow.emit(translation)
+
+            assertNull(expectMostRecentItem().translation)
+        }
+    }
+
+    @Test
+    fun `ToolCardState - translation - custom locale`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        appLocaleState.value = Locale.ENGLISH
+        val translation = randomTranslation(TOOL, Locale.FRENCH)
+
+        presenterTestOf(
+            presentFunction = {
+                presenter.present(tool = toolFlow.collectAsState().value, customLocale = Locale.FRENCH)
+            }
+        ) {
+            frTranslationFlow.emit(translation)
+
+            val state = expectMostRecentItem()
+            assertTrue(state.isLoaded)
+            assertEquals(translation, state.translation)
+        }
+    }
+
+    @Test
+    fun `ToolCardState - translation - custom locale - fallback to default language`() = runTest {
+        toolFlow.value = randomTool(TOOL, defaultLocale = Locale.ENGLISH)
+        appLocaleState.value = Locale.GERMAN
+        val translation = randomTranslation(TOOL, Locale.ENGLISH)
+
+        presenterTestOf(
+            presentFunction = {
+                presenter.present(tool = toolFlow.collectAsState().value, customLocale = Locale.FRENCH)
+            }
+        ) {
+            enTranslationFlow.emit(translation)
+            assertNotNull(expectMostRecentItem()) {
+                assertNull(
+                    it.translation,
+                    "Translation should not be returned until the custom translation has attempted to load"
+                )
+                assertFalse(it.isLoaded, "isLoaded should be false until the custom translation has attempted to load")
+            }
+
+            frTranslationFlow.emit(null)
+            assertNotNull(expectMostRecentItem()) {
+                assertTrue(it.isLoaded)
+                assertEquals(translation, it.translation)
+            }
+        }
+    }
+    // endregion ToolCard.State.translation
+
+    // region ToolCard.State.appLanguage
+    @Test
+    fun `ToolCardState - appLanguage`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        appLocaleState.value = Locale.FRENCH
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, loadAppLanguage = true) }
+        ) {
+            frLanguageFlow.emit(Language(Locale.FRENCH))
+            assertEquals(Language(Locale.FRENCH), expectMostRecentItem().appLanguage)
+        }
+    }
+
+    @Test
+    fun `ToolCardState - appLanguage - loadAppLanguage=false`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        appLocaleState.value = Locale.FRENCH
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, loadAppLanguage = false) }
+        ) {
+            frLanguageFlow.emit(Language(Locale.FRENCH))
+            assertNull(expectMostRecentItem().appLanguage)
+        }
+
+        verifyAll { languagesRepository wasNot Called }
+    }
+    // endregion ToolCard.State.appLanguage
+
+    // region ToolCard.State.appLanguageAvailable
+    @Test
+    fun `ToolCardState - appLanguageAvailable`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        appLocaleState.value = Locale.FRENCH
+        val translation = randomTranslation(TOOL, Locale.FRENCH)
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value) }
+        ) {
+            assertFalse(expectMostRecentItem().appLanguageAvailable)
+            frTranslationFlow.emit(translation)
+
+            assertTrue(expectMostRecentItem().appLanguageAvailable)
+        }
+    }
+    // endregion ToolCard.State.appLanguageAvailable
+
+    // region ToolCard.State.secondLanguage
+    @Test
+    fun `ToolCardState - secondLanguage`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        val language = Language(Locale.FRENCH)
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, secondLanguage = language) }
+        ) {
+            assertEquals(language, expectMostRecentItem().secondLanguage)
+        }
+    }
+    // endregion ToolCard.State.secondLanguage
+
+    // region ToolCard.State.secondLanguageAvailable
+    @Test
+    fun `ToolCardState - secondLanguageAvailable`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        val language = Language(Locale.FRENCH)
+        val translation = randomTranslation(TOOL, Locale.FRENCH)
+
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, secondLanguage = language) }
+        ) {
+            frTranslationFlow.emit(translation)
+            assertTrue(expectMostRecentItem().secondLanguageAvailable)
+        }
+    }
+    // endregion ToolCard.State.secondLanguageAvailable
+
+    // region ToolCard.State.progress
+    @Test
+    fun `ToolCardState - progress - not started`() = runTest {
+        val tool = randomTool(TOOL, Tool.Type.LESSON, progress = null)
+
+        presenterTestOf(presentFunction = { presenter.present(tool) }) {
+            assertNull(expectMostRecentItem().progress)
+        }
+    }
+
+    @Test
+    fun `ToolCardState - progress - in progress`() = runTest {
+        val tool = randomTool(TOOL, Tool.Type.LESSON, progress = Random.nextDouble(0.0, 1.0))
+
+        presenterTestOf(presentFunction = { presenter.present(tool) }) {
+            assertEquals(
+                tool.progress!!,
+                assertIs<ToolCard.State.Progress.InProgress>(expectMostRecentItem().progress).progress,
+                0.0001
+            )
+        }
+    }
+
+    @Test
+    fun `ToolCardState - progress - completed`() = runTest {
+        val tool = randomTool(TOOL, Tool.Type.LESSON, progress = Random.nextDouble(0.0, 1.0))
+        every {
+            userCountersRepository.findCounterFlow(LESSON_COMPLETION(TOOL))
+        } returns flowOf(UserCounter(apiCount = 1))
+
+        presenterTestOf(presentFunction = { presenter.present(tool) }) {
+            assertEquals(ToolCard.State.Progress.Completed, expectMostRecentItem().progress)
+        }
+    }
+    // endregion ToolCard.State.progress
+
+    // region ToolCard.State.availableLanguages
+    @Test
+    fun `ToolCardState - availableLanguages`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        val translations = listOf(
+            randomTranslation(languageCode = Locale.ENGLISH),
+            randomTranslation(languageCode = Locale.FRENCH),
+        )
+        every { translationsRepository.getTranslationsFlowForTool(TOOL) } returns flowOf(translations)
+
+        presenterTestOf(
+            presentFunction = {
+                presenter.present(tool = toolFlow.collectAsState().value, loadAvailableLanguages = true)
+            }
+        ) {
+            assertEquals(2, expectMostRecentItem().availableLanguages)
+        }
+
+        verify { translationsRepository.getTranslationsFlowForTool(TOOL) }
+    }
+
+    @Test
+    fun `ToolCardState - availableLanguages - loadAvailableLanguages=false`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        val translations = listOf(
+            randomTranslation(languageCode = Locale.ENGLISH),
+            randomTranslation(languageCode = Locale.FRENCH),
+        )
+        every { translationsRepository.getTranslationsFlowForTool(TOOL) } returns flowOf(translations)
+
+        presenterTestOf(
+            presentFunction = {
+                presenter.present(tool = toolFlow.collectAsState().value, loadAvailableLanguages = false)
+            }
+        ) {
+            assertEquals(0, expectMostRecentItem().availableLanguages)
+        }
+
+        verify(exactly = 0) { translationsRepository.getTranslationsFlowForTool(TOOL) }
+    }
+
+    @Test
+    fun `ToolCardState - availableLanguages - Only distinct languages are counted`() = runTest {
+        toolFlow.value = randomTool(TOOL)
+        every { translationsRepository.getTranslationsFlowForTool(TOOL) }.returns(
+            flowOf(
+                listOf(
+                    randomTranslation(languageCode = Locale.ENGLISH),
+                    randomTranslation(languageCode = Locale.ENGLISH)
+                )
+            )
+        )
+
+        presenterTestOf(
+            presentFunction = {
+                presenter.present(tool = toolFlow.collectAsState().value, loadAvailableLanguages = true)
+            }
+        ) {
+            assertEquals(1, expectMostRecentItem().availableLanguages)
+        }
+
+        verify { translationsRepository.getTranslationsFlowForTool(TOOL) }
+    }
+    // endregion ToolCard.State.availableLanguages
+
+    // region ToolCard.State
+    @Test
+    fun `ToolCardState - GT-2364 - App Language Not Available, Second language matches Default language`() = runTest {
+        appLocaleState.value = Locale.FRENCH
+        toolFlow.value = randomTool(TOOL, defaultLocale = Locale.ENGLISH)
+        val translation = randomTranslation(TOOL, Locale.ENGLISH)
+
+        presenterTestOf(
+            presentFunction = {
+                presenter.present(
+                    tool = toolFlow.collectAsState().value,
+                    secondLanguage = Language(Locale.ENGLISH),
+                )
+            }
+        ) {
+            enTranslationFlow.emit(translation)
+            frTranslationFlow.emit(null)
+
+            assertNotNull(expectMostRecentItem()) { state ->
+                assertNotNull(state.translation) {
+                    assertEquals(Locale.ENGLISH, it.languageCode)
+                }
+                assertFalse(state.appLanguageAvailable)
+                assertEquals(Language(Locale.ENGLISH), state.secondLanguage)
+                assertTrue(state.secondLanguageAvailable)
+            }
+        }
+    }
+    // endregion ToolCard.State
+
+    // region ToolCard.Event.Click
+    @Test
+    fun `ToolCardEvent - Click`() = runTest {
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, eventSink = events) }
+        ) {
+            expectMostRecentItem().eventSink(ToolCard.Event.Click)
+        }
+
+        events.assertEvent(ToolCard.Event.Click)
+    }
+    // endregion ToolCard.Event.Click
+
+    // region ToolCard.Event.OpenTool
+    @Test
+    fun `ToolCardEvent - OpenTool`() = runTest {
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, eventSink = events) }
+        ) {
+            expectMostRecentItem().eventSink(ToolCard.Event.OpenTool)
+        }
+
+        events.assertEvent(ToolCard.Event.OpenTool)
+    }
+    // endregion ToolCard.Event.OpenTool
+
+    // region ToolCard.Event.OpenToolDetails
+    @Test
+    fun `ToolCardEvent - OpenToolDetails`() = runTest {
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, eventSink = events) }
+        ) {
+            expectMostRecentItem().eventSink(ToolCard.Event.OpenToolDetails)
+        }
+
+        events.assertEvent(ToolCard.Event.OpenToolDetails)
+    }
+    // endregion ToolCard.Event.OpenToolDetails
+
+    // region ToolCard.Event.PinTool
+    @Test
+    fun `ToolCardEvent - PinTool`() = runTest {
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, eventSink = events) }
+        ) {
+            expectMostRecentItem().eventSink(ToolCard.Event.PinTool)
+        }
+
+        coVerifyAll { toolsRepository.pinTool(TOOL) }
+        events.assertNoEvents()
+    }
+    // endregion ToolCard.Event.PinTool
+
+    // region ToolCard.Event.UnpinTool
+    @Test
+    fun `ToolCardEvent - UnpinTool`() = runTest {
+        presenterTestOf(
+            presentFunction = { presenter.present(tool = toolFlow.collectAsState().value, eventSink = events) }
+        ) {
+            expectMostRecentItem().eventSink(ToolCard.Event.UnpinTool)
+        }
+
+        coVerifyAll { toolsRepository.unpinTool(TOOL) }
+        events.assertNoEvents()
+    }
+    // endregion ToolCard.Event.UnpinTool
+}

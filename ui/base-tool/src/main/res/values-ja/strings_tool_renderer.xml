@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tool_not_found">リクエストしたツールが見つかりません</string>
+    <string name="tool_loading">リクエストしたツールを読み込み中…</string>
+    <string name="tool_offline">リクエストされたツールを開くためにはインターネット接続が必要です</string>
+    <string name="tract_content_input_error_required">%1$sが必要です</string>
+    <string name="tract_content_input_error_invalid_email">有効なメールアドレスを入力してください</string>
+    <!-- Share Tool Functionality -->
+    <string name="menu_share_tool">シェア</string>
+    <string name="tool_share_sheet_more_apps">その他</string>
+    <string name="share_tool_message">今日お話ししたウェブ版にはこちらのリンクから移動できます: %1$s \n\n
+
+アプリはこちらからダウンロードできます://godtoolsapp.com \n\n
+
+また一緒にお話ししましょう！</string>
+    <string name="share_tool_message_article">あなたにぜひ読んでもらいたい記事があったので送ります。ぜひ、あなたの感想を聞かせてください。\n%1$s</string>
+    <string name="feature_discovery_title_share_tool">リンクをシェア</string>
+    <string name="feature_discovery_desc_share_tool">このアイコンをクリックして、このツールを友達に送りましょう</string>
+    <!-- Shareables -->
+    <string name="tool_shareable_action_share_image">画像をシェア</string>
+    <!-- Settings -->
+    <string name="menu_settings">設定</string>
+    <string name="tool_settings_title">ツールオプション</string>
+    <string name="tool_settings_action_share">リンクをシェア</string>
+    <string name="tool_settings_languages_title">並列言語</string>
+    <string name="tool_settings_languages_description">本ツール内で2つの言語を切り替えることができます。</string>
+    <string name="tool_settings_languages_parallel">並列</string>
+    <string name="tool_settings_languages_none">なし</string>
+    <string name="tool_settings_shareables_title">関連する画像</string>
+</resources>

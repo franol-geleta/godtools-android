@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="menu_profile">الحركة</string>
+    <string name="account_joined">منضم  %1$s</string>
+    <!-- Create / Login -->
+    <string name="account_create_heading">التسجيل (إنشاء حساب)</string>
+    <string name="account_create_description">قم بإنشاء حساب للحصول على قصص حقيقية وتشجيع ونصائح عملية في متناول يدك.</string>
+    <string name="account_login_heading">تسجيل دخول</string>
+    <string name="account_login_description">قم بتسجيل الدخول إلى حسابك لتحصل على قصص حقيقية وتشجيعات ونصائح عملية في متناول يدك</string>
+    <string name="account_error_title">فشل التحقق من الهوية</string>
+    <string name="account_error_user_already_exists">حساب المستخدم موجود بالفعل.</string>
+    <string name="account_error_user_not_found">لم يتم العثور على حساب المستخدم.</string>
+    <string name="account_error_not_connected_title">لا يوجد اتصال بالإنترنت</string>
+    <string name="account_error_not_connected">يرجى التأكد من اتصالك بالانترنت وإعادة المحاولة.</string>
+    <string name="account_error_unknown">خطأ في تسجيل الدخول.</string>
+    <string name="account_error_dialog_dismiss">موافق</string>
+    <!-- Delete Account -->
+    <string name="menu_account_delete">حذف الحساب</string>
+    <string name="account_delete_heading">لا تغادرنا بهذه السرعة</string>
+    <string name="account_delete_description">إذا قمت بحذف حسابك، فلن تتمكن من الوصول إلى أدواتك المفضلة أو نشاط حسابك.</string>
+    <string name="account_delete_action_delete">احذف حسابي</string>
+    <string name="account_delete_action_cancel">أبق على حسابي</string>
+    <string name="account_delete_error">حدث خطأ أثناء حذف حسابك. تأكد من أنك متصل بالإنترنت أو حاول مرة أخرى لاحقًا.</string>
+    <string name="account_delete_error_dismiss">موافق</string>
+    <!-- Activity -->
+    <string name="profile_tab_activity">الحركة</string>
+    <string name="account_activity_header">نشاط حركتك</string>
+    <plurals name="account_activity_tool_opens" tools:ignore="ImpliedQuantity">
+        <item quantity="zero">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="one">الأداة مفتوحة</item>
+        <item quantity="two">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="few">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="many">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="other">عدد فتح أدوات</item>
+    </plurals>
+    <plurals name="account_activity_lesson_completions" tools:ignore="ImpliedQuantity">
+        <item quantity="zero">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="one">الانتهاء من الدرس</item>
+        <item quantity="two">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="few">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="many">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="other">استكمالات الدرس</item>
+    </plurals>
+    <plurals name="account_activity_screen_shares" tools:ignore="ImpliedQuantity">
+        <item quantity="zero">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="one">مشاركة الشاشة</item>
+        <item quantity="two">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="few">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="many">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="other">الشاشات التي تم مشاركاتها</item>
+    </plurals>
+    <plurals name="account_activity_links_shared" tools:ignore="ImpliedQuantity">
+        <item quantity="zero">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="one">الرابط الذي تم مشاركته</item>
+        <item quantity="two">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="few">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="many">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="other">الروابط تم مشاركتها</item>
+    </plurals>
+    <plurals name="account_activity_languages_used" tools:ignore="ImpliedQuantity">
+        <item quantity="zero">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="one">اللغة المستخدمة</item>
+        <item quantity="two">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="few">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="many">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="other">اللغات المستخدمة</item>
+    </plurals>
+    <plurals name="account_activity_sessions" tools:ignore="ImpliedQuantity">
+        <item quantity="zero">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="one">جلسة</item>
+        <item quantity="two">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="few">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="many">لغة المصدر لا تحتوي على صيغة الجمع هذه</item>
+        <item quantity="other">جلسات</item>
+    </plurals>
+    <!-- Badges -->
+    <string name="account_activity_badges_header">شاراتك</string>
+    <plurals name="account_activity_badge_tools_opened">
+        <item quantity="zero">لا يوجد ادوات مفتوحة</item>
+        <item quantity="one">تم فتح %1$,d من الأدوات</item>
+        <item quantity="two">تم فتح 2 من الأدوات</item>
+        <item quantity="few">تم فتح قليل من الأدوات</item>
+        <item quantity="many">تم فتح العديد من الأدوات</item>
+        <item quantity="other">تم فتح %1$,d من الأدوات</item>
+    </plurals>
+    <plurals name="account_activity_badge_lessons_completed">
+        <item quantity="zero">لا يوجد دروس مكتملة</item>
+        <item quantity="one">تم إكمال %1$,d من الدروس</item>
+        <item quantity="two">تم إكمال عدد 2 من الدروس</item>
+        <item quantity="few">تم إكمال القليل من الدروس</item>
+        <item quantity="many">تم إكمال العديد من الدروس</item>
+        <item quantity="other">تم إكمال %1$,d من الدروس</item>
+    </plurals>
+    <plurals name="account_activity_badge_articles_opened">
+        <item quantity="zero">لا يوجد مقالات مفتوحة</item>
+        <item quantity="one">تم فتح %1$,d من المقالات</item>
+        <item quantity="two">عدد 2 مقال مفتوحين</item>
+        <item quantity="few">بعض المقالات مفتوحة</item>
+        <item quantity="many">عديد من المقالات مفتوحة</item>
+        <item quantity="other">تم فتح %1$,d من المقالات</item>
+    </plurals>
+    <plurals name="account_activity_badge_images_shared">
+        <item quantity="zero">لا يوجد صورة  مشاركة</item>
+        <item quantity="one">تمت مشاركة %1$,d من الصور</item>
+        <item quantity="two">عدد 2 صورة  مشاركة</item>
+        <item quantity="few">بعض الصور مشاركة</item>
+        <item quantity="many">العديد من الصور مشاركة</item>
+        <item quantity="other">تمت مشاركة %1$,d من الصور</item>
+    </plurals>
+    <plurals name="account_activity_badge_tips_completed">
+        <item quantity="zero">لا يوجد نصائح تدريبية مكتملة</item>
+        <item quantity="one">نصائح تدريبية مكتملة %1$,d</item>
+        <item quantity="two">عدد 2 نصائح تدريبية مكتملة</item>
+        <item quantity="few">بعض من النصائح التدريبية مكتملة</item>
+        <item quantity="many">العديد من النصائح التدريبية مكتملة</item>
+        <item quantity="other">نصائح تدريبية مكتملة %1$,d</item>
+    </plurals>
+    <!-- Global Activity -->
+    <string name="account_tab_global_activity">النشاط العالمي</string>
+    <string name="profile_global_activity_heading">النشاط العالمي %1$s</string>
+    <string name="profile_activity_unique_users">المستخدمون الفريدون</string>
+    <string name="profile_activity_gospel_presentations">مشاركة الانجيل</string>
+    <string name="profile_activity_sessions">الجلسات</string>
+    <string name="profile_activity_countries">البلدان</string>
+</resources>

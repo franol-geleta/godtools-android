@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Onboarding Tutorial -->
+    <string name="tutorial_onboarding_change_language">Selecionar idioma</string>
+    <string name="tutorial_onboarding_welcome">Bem vindo(a)!</string>
+    <string name="tutorial_onboarding_welcome_2">Pronto para toda conversa</string>
+    <string name="tutorial_onboarding_welcome_action_video">Assistir a Vídeo</string>
+    <string name="tutorial_onboarding_conversations_headline">Fale sobre Deus com qualquer pessoa</string>
+    <string name="tutorial_onboarding_conversations_subhead">O aplicativo GodTools ajuda você a ter conversas importantes sobre Deus.</string>
+    <string name="tutorial_onboarding_prepare_headline">Se prepare para os momentos importantes</string>
+    <string name="tutorial_onboarding_prepare_subhead">Aprenda a tornar as conversas sobre a fé parte natural da sua vida.</string>
+    <string name="tutorial_onboarding_share_headline">Ajude outra pessoa a descobrir quem é Jesus</string>
+    <string name="tutorial_onboarding_share_subhead">O aplicativo GodTools é o seu guia para comunicar o evangelho de maneiras claras e relevantes.</string>
+    <string name="tutorial_onboarding_action_begin">Comece</string>
+    <string name="tutorial_onboarding_action_next">Próximo</string>
+    <string name="tutorial_onboarding_action_skip">Pular</string>
+    <string name="tutorial_onboarding_action_start">Comece</string>
+</resources>

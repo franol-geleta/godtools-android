@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="action_bar_action_tint">@color/white</color>
+
+    <style name="Widget.GodTools.ActionBar.Solid" parent="Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="displayOptions">showHome|showTitle</item>
+    </style>
+
+    <style name="Widget.GodTools.Toolbar.AppBar" parent="Widget.AppCompat.Toolbar">
+        <item name="popupTheme">?attr/actionBarPopupTheme</item>
+    </style>
+
+    <style name="ThemeOverlay.GodTools.Toolbar.AppBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <dimen name="appbar_tabs_height">32dp</dimen>
+    <style name="Widget.GodTools.TabLayout.AppBar">
+        <item name="android:layout_gravity">center</item>
+        <item name="backgroundTint">?attr/colorControlNormal</item>
+        <item name="tabBackground">@drawable/bkg_tab_label_appbar</item>
+        <item name="tabTextColor">?attr/colorControlNormal</item>
+        <item name="tabSelectedTextColor">?attr/colorPrimary</item>
+    </style>
+</resources>

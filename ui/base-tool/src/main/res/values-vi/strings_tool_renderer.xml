@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tool_not_found">Không thể tìm thấy công cụ bạn yêu cầu</string>
+    <string name="tool_loading">Công cụ bạn yêu cầu đang được tải...</string>
+    <string name="tool_offline">Công cụ bạn yêu cầu cần kết nối Internet để mở</string>
+    <string name="tract_content_input_error_required">%1$s là bắt buộc</string>
+    <string name="tract_content_input_error_invalid_email">Vui lòng nhập địa chỉ email hợp lệ</string>
+    <!-- Share Tool Functionality -->
+    <string name="menu_share_tool">Chia sẻ</string>
+    <string name="tool_share_sheet_more_apps">Xem thêm</string>
+    <string name="share_tool_message">Đường dẫn này sẽ dẫn bạn tới một phiên bản web của những gì chúng ta đang trao đổi ngày hôm nay: %1$s \n\n
+
+Ứng dụng có thể được tải về từ https://godtoolsapp.com/vi/ \n\n
+
+Hãy trò chuyện thêm nhé!</string>
+    <string name="share_tool_message_article">Tôi muốn chia sẻ bài viết này với bạn và cũng muốn lắng nghe suy nghĩ của bạn.\n%1$s</string>
+    <string name="feature_discovery_title_share_tool">Chia sẻ một liên kết</string>
+    <string name="feature_discovery_desc_share_tool">Bấm vào biểu tượng này để chia sẻ công cụ cho người khác.</string>
+    <!-- Shareables -->
+    <string name="tool_shareable_action_share_image">Chia sẻ hình ảnh</string>
+    <!-- Settings -->
+    <string name="menu_settings">Cài đặt</string>
+    <string name="tool_settings_title">Những lựa chọn</string>
+    <string name="tool_settings_action_share">Chia sẻ đường link</string>
+    <string name="tool_settings_languages_title">Ngôn ngữ song song</string>
+    <string name="tool_settings_languages_description">Chuyển đổi giữa 2 ngôn ngữ khác nhau trong công cụ này.</string>
+    <string name="tool_settings_languages_parallel">Song song</string>
+    <string name="tool_settings_languages_none">Không</string>
+    <string name="tool_settings_shareables_title">Hình ảnh tương ứng</string>
+</resources>

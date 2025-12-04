@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tool Details UI -->
+    <string name="menu_add_to_home">होम स्क्रीन में जोड़ें</string>
+    <string name="action_tools_open_tool">टूल खोलें</string>
+    <string name="action_tools_add_favorite">पसंदीदा में जोड़ें</string>
+    <string name="action_tools_remove_favorite">पसंदीदा से निकालें</string>
+    <string name="action_tools_open_training">इस टूल को साझा करना सीखें</string>
+    <plurals name="label_tools_shares">
+        <item quantity="one">%1$,d दृश्य</item>
+        <item quantity="other">%1$,d दृश्य</item>
+    </plurals>
+    <string name="label_tools_about">बारे में</string>
+    <plurals name="label_tools_languages">
+        <item quantity="one">%1$,d भाषा</item>
+        <item quantity="other">%1$,d भाषाएं</item>
+    </plurals>
+    <string name="tool_details_section_description_conversation_starters">वार्तालाप प्रवर्तक</string>
+    <string name="tool_details_section_description_outline">रूपरेखा</string>
+    <string name="tool_details_section_description_bible_references">बाइबल के हवाले</string>
+    <string name="tool_details_section_description_languages_available">उपलब्ध भाषाएँ</string>
+    <string name="tool_details_section_variants_label">संस्करण</string>
+    <string name="tool_details_section_variants_description">नीचे इस टूल का एक अलग संस्करण चुनें। हर संस्करण की अपनी विशिष्ट स्टाइल और सामग्री है ताकि आप वार्तालाप के लिए सबसे उपयुक्त को चुन सकें। आप एक ही टूल के कई संस्करण पसंदीदा में जोड़ सकते हैं।</string>
+</resources>

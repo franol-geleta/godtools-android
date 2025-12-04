@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Onboarding Tutorial -->
+    <string name="tutorial_onboarding_change_language">भाषा चुनें</string>
+    <string name="tutorial_onboarding_welcome">स्वागतम</string>
+    <string name="tutorial_onboarding_welcome_2">हर वार्तालाप के लिए तैयार</string>
+    <string name="tutorial_onboarding_welcome_action_video">वीडियो देखें</string>
+    <string name="tutorial_onboarding_conversations_headline">परमेश्वर के बारे में किसी से भी वार्तालाप करें</string>
+    <string name="tutorial_onboarding_conversations_subhead">GodTools आपको परमेश्वर के बारे में अर्थपूर्ण वार्तालाप करने में मदद करते हैं।</string>
+    <string name="tutorial_onboarding_prepare_headline">महत्त्वपूर्ण पलों की तैयारी करें</string>
+    <string name="tutorial_onboarding_prepare_subhead">सीखें कि विश्वास-संबंधी बातचीत को अपने जीवन का एक अभिन्न अंग कैसे बनाएँ।</string>
+    <string name="tutorial_onboarding_share_headline">किसी को जीसस के पास आने में मदद करें</string>
+    <string name="tutorial_onboarding_share_subhead">इंजील के बारे में स्पष्ट और प्रासंगिक तरीके से संवाद स्थापित करने में GodTools आपका दिशादर्शक है।</string>
+    <string name="tutorial_onboarding_action_begin">शुरू करें</string>
+    <string name="tutorial_onboarding_action_next">आगे</string>
+    <string name="tutorial_onboarding_action_skip">छोड़ें</string>
+    <string name="tutorial_onboarding_action_start">शुरू हो जाएंँ</string>
+</resources>

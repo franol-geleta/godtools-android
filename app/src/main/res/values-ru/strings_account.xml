@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="menu_profile">Активность</string>
+    <string name="account_joined">Присоединилось %1$s</string>
+    <!-- Create / Login -->
+    <string name="account_create_heading">Создать аккаунт</string>
+    <string name="account_create_description">Создайте аккаунт, чтобы вам были доступны реальные истории, слова поддержки и практические советы.</string>
+    <string name="account_login_heading">Войти</string>
+    <string name="account_login_description">Войдите в учетную запись, чтобы видеть реальные истории, слова поддержки и практические советы.</string>
+    <string name="account_error_title">Ошибка аутентификации</string>
+    <string name="account_error_user_already_exists">Учетная запись пользователя уже существует.</string>
+    <string name="account_error_user_not_found">Учетная запись пользователя не найдена.</string>
+    <string name="account_error_not_connected_title">Отсутствует подключение к Интернету</string>
+    <string name="account_error_not_connected">Проверьте подключение к сети и попробуйте еще раз.</string>
+    <string name="account_error_unknown">Ошибка входа.</string>
+    <string name="account_error_dialog_dismiss">ОК</string>
+    <!-- Delete Account -->
+    <string name="menu_account_delete">Удалить учетную запись</string>
+    <string name="account_delete_heading">Не уходите так быстро</string>
+    <string name="account_delete_description">Если вы удалите учетную запись, вы больше не сможете пользоваться любимыми инструментами и функциями.</string>
+    <string name="account_delete_action_delete">Удалить мою учетную запись</string>
+    <string name="account_delete_action_cancel">Не удалять учетную запись</string>
+    <string name="account_delete_error">Во время удаления учетной записи произошла ошибка. Проверьте подключение к сети или повторите попытку позже.</string>
+    <string name="account_delete_error_dismiss">ОК</string>
+    <!-- Activity -->
+    <string name="profile_tab_activity">Активность</string>
+    <string name="account_activity_header">Ваша активность</string>
+    <plurals name="account_activity_tool_opens" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Инструмент открыт</item>
+        <item quantity="few">Инструментов открыто</item>
+        <item quantity="many">Инструментов открыто</item>
+        <item quantity="other">Инструментов открыто</item>
+    </plurals>
+    <plurals name="account_activity_lesson_completions" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Урок пройден</item>
+        <item quantity="few">Уроков пройдено</item>
+        <item quantity="many">Урока пройдено</item>
+        <item quantity="other">Уроков пройдено</item>
+    </plurals>
+    <plurals name="account_activity_screen_shares" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Раз показан экран</item>
+        <item quantity="few">Раза показан экран</item>
+        <item quantity="many">Раз показан экран</item>
+        <item quantity="other">Раз показан экран</item>
+    </plurals>
+    <plurals name="account_activity_languages_used" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Язык использован</item>
+        <item quantity="few">Языка использовано</item>
+        <item quantity="many">Языков использовано</item>
+        <item quantity="other">Языков использовано</item>
+    </plurals>
+    <plurals name="account_activity_sessions" tools:ignore="ImpliedQuantity">
+        <item quantity="one">Сессия</item>
+        <item quantity="few">Сессии</item>
+        <item quantity="many">Сеансы</item>
+        <item quantity="other">Сессий</item>
+    </plurals>
+    <!-- Badges -->
+    <string name="account_activity_badges_header">Ваши значки</string>
+    <plurals name="account_activity_badge_tools_opened">
+        <item quantity="one">Открыт %1$,d инструмент</item>
+        <item quantity="few">Открытых инструментов %1$,d</item>
+        <item quantity="many">Открыто %1$,d инструментов</item>
+        <item quantity="other">Открыты %1$,d инструменты</item>
+    </plurals>
+    <plurals name="account_activity_badge_lessons_completed">
+        <item quantity="one">Завершен %1$,d урок</item>
+        <item quantity="few">Завершенных уроков %1$,d</item>
+        <item quantity="many">Завершено %1$,d уроков</item>
+        <item quantity="other">Завершены %1$,d уроки</item>
+    </plurals>
+    <plurals name="account_activity_badge_articles_opened">
+        <item quantity="one">Открыта %1$,d статья</item>
+        <item quantity="few">Открытых статей %1$,d</item>
+        <item quantity="many">Открыто %1$,d  статей</item>
+        <item quantity="other">Открыто %1$,d  статей</item>
+    </plurals>
+    <plurals name="account_activity_badge_images_shared">
+        <item quantity="one">Отправлено %1$,d изображение</item>
+        <item quantity="few">Отправленных изображений %1$,d</item>
+        <item quantity="many">Отправлено %1$,d изображений</item>
+        <item quantity="other">Отправлено %1$m,d изображений</item>
+    </plurals>
+    <plurals name="account_activity_badge_tips_completed">
+        <item quantity="one">Пройдена %1$,d подсказка по обучению</item>
+        <item quantity="few">Пройденных подсказок обучению %1$,d</item>
+        <item quantity="many">Пройдено %1$,d подсказок по обучению</item>
+        <item quantity="other">Пройдено %1$,d подсказок по обучению</item>
+    </plurals>
+    <!-- Global Activity -->
+    <string name="account_tab_global_activity">Активность по миру</string>
+    <string name="profile_global_activity_heading">%1$s  активность по миру</string>
+    <string name="profile_activity_unique_users">Уникальные пользователи</string>
+    <string name="profile_activity_gospel_presentations">Презентация Евангелия</string>
+    <string name="profile_activity_sessions">Сессии</string>
+    <string name="profile_activity_countries">Страны</string>
+</resources>

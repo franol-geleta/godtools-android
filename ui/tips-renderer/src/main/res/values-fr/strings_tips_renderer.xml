@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Training Tips -->
+    <string name="tract_tips_tip_action_next">Suivant</string>
+    <string name="tract_tips_tip_action_close">Fermer</string>
+    <!-- Tip Types -->
+    <string name="tract_tips_type_ask">Demandez</string>
+    <string name="tract_tips_type_consider">Considérer</string>
+    <string name="tract_tips_type_prepare">Préparer</string>
+    <string name="tract_tips_type_quote">Citation</string>
+    <string name="tract_tips_type_tip">Conseil</string>
+    <!-- Settings -->
+    <string name="tool_settings_action_tips_enable">Conseils de formation</string>
+    <string name="tool_settings_action_tips_disable">Cacher des astuces</string>
+</resources>

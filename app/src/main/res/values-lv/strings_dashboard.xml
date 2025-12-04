@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- optInNotification -->
+    <string name="opt_in_notification_title">Saņem padomus un iedrošinājumu</string>
+    <string name="opt_in_notification_body">Esi sagatavots sarunām.\nAtļauj paziņojumus jau šodien!</string>
+    <string name="opt_in_notification_allow_notifications">Atļaut paziņojumus</string>
+    <string name="opt_in_notification_notification_settings">Paziņojumu iestatījumi</string>
+    <string name="opt_in_notification_maybe_later">Varbūt vēlāk</string>
+    <!-- Navigation Menu -->
+    <string name="menu_heading_get_started">Sākt lietot</string>
+    <string name="menu_tutorial">Pamācība</string>
+    <string name="menu_heading_account">Konts</string>
+    <string name="menu_login">Pierakstīties</string>
+    <string name="menu_signup">Reģistrēt kontu</string>
+    <string name="menu_logout">Izrakstīties</string>
+    <string name="menu_heading_support">Atbalsts</string>
+    <string name="menu_feedback">Nosūtīt atsauksmes</string>
+    <string name="menu_report_bug">Ziņot par kļūdu</string>
+    <string name="menu_question">Uzdod jautājumu</string>
+    <string name="menu_heading_share">Dalies</string>
+    <string name="menu_review">Atstāj atsauksmi</string>
+    <string name="menu_share_story">Pastāsti savu liecību</string>
+    <string name="menu_share_godtools">Kopīgo \'GodTools\' lietotni</string>
+    <string name="share_app_message">Lejupielādē \'GodTools\' lietotni savā tālrunī: https://ej.uz/GodTools \n\n
+
+Rīku tīmekļa versijas ir pieejamas: https://KnowGod.com/lv</string>
+    <string name="share_story_subject">\'GodTools\' liecība</string>
+    <string name="menu_heading_about">Par lietotni</string>
+    <string name="menu_terms_of_use">Lietošanas noteikumi</string>
+    <string name="menu_privacy_policy">Privātuma politika</string>
+    <string name="menu_copyright">Informācija par autortiesībām</string>
+    <string name="menu_version">Versija: %1$s (%2$d)</string>
+    <!-- Lessons -->
+    <string name="nav_lessons">Nodarbības</string>
+    <string name="dashboard_lessons_header_title">Nodarbības, kas pielāgotas tev</string>
+    <string name="dashboard_lessons_header_description">Praktiskas idejas attiecību veidošanai un nozīmīgu sarunu uzsākšanai.</string>
+    <string name="dashboard_lessons_section_filter_label">Nodarbības:</string>
+    <plurals name="dashboard_lessons_section_filter_available_lessons">
+        <item quantity="zero">Pieejamas nodarbības: %1$d</item>
+        <item quantity="one">Pieejamas nodarbības: %1$d</item>
+        <item quantity="other">Pieejamas nodarbības: %1$d</item>
+    </plurals>
+    <string name="dashboard_lessons_progress_completed">Pabeigts</string>
+    <string name="dashboard_lessons_progress_in_progress">%1$d%% pabeigts</string>
+    <!-- Home -->
+    <string name="nav_favorite_tools">Izlase</string>
+    <string name="dashboard_home_header_title">Sveiki!</string>
+    <string name="dashboard_home_section_featured_lesson">Iesakām tev šo nodarbību</string>
+    <string name="dashboard_home_section_favorites_title">Tava rīku izlase</string>
+    <string name="dashboard_home_section_favorites_no_tools_title">Nav iecienīto rīku, ko parādīt</string>
+    <string name="dashboard_home_section_favorites_no_tools_description">Nospiežot sirds ikonu, rīks tiks pievienots izlasei un būs pieejams bezsaistē.</string>
+    <string name="dashboard_home_section_favorites_action_view_all">Skatīt visus &gt;</string>
+    <string name="dashboard_home_section_favorites_action_all_tools">Skatīt rīkus</string>
+    <string name="tools_list_favorites_banner_text">Padari rīku pieejamu bezsaistē, nospiežot sirds ikonu, lai pievienotu to izlasei.</string>
+    <string name="tools_list_favorites_banner_action_dismiss">Aizvērt</string>
+    <!-- All Tools -->
+    <string name="nav_all_tools">Rīki</string>
+    <string name="dashboard_tools_section_filter_label">Filtrs</string>
+    <string name="dashboard_tools_section_filter_category_any">Visas kategorijas</string>
+    <string name="dashboard_tools_section_filter_language_any">Visas valodas</string>
+    <plurals name="dashboard_tools_section_filter_available_tools">
+        <item quantity="zero">Pieejamo rīku skaits: %1$d</item>
+        <item quantity="one">Pieejamo rīku skaits: %1$d</item>
+        <item quantity="other">Pieejamo rīku skaits: %1$d</item>
+    </plurals>
+    <string name="dashboard_tools_section_filter_available_tools_all">Pieejami visi rīki</string>
+    <string name="dashboard_tools_section_categories_label">Kategorijas</string>
+    <string name="dashboard_tools_section_categories_all">Visi rīki</string>
+    <string name="dashboard_tools_section_spotlight_label">Izmēģini rīku</string>
+    <string name="dashboard_tools_section_spotlight_description">Lūk, daži rīki, kas tev varētu patikt</string>
+    <!-- Tool Cards -->
+    <string name="tools_list_remove_favorite_dialog_title">Izņemt \"%1$s\" no izlases?</string>
+    <string name="tools_list_remove_favorite_dialog_confirm">Izņemt</string>
+    <string name="tools_list_remove_favorite_dialog_dismiss">Atcelt</string>
+    <string name="tool_card_accessibility_language_available">Pieejams</string>
+    <string name="tool_card_accessibility_language_unavailable">Nav pieejams</string>
+    <string name="action_tools_about">Apraksts</string>
+    <string name="action_tools_open">Atvērt</string>
+    <!-- In App Update -->
+    <string name="play_update_available">Ir pieejams atjauninājums</string>
+    <string name="play_update_available_action">Lejupielādēt</string>
+    <string name="play_update_downloaded">Atjauninājums ir lejupielādēts</string>
+    <string name="play_update_downloaded_action">Pārlādēt</string>
+</resources>

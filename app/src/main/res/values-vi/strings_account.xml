@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="menu_profile">Hoạt động</string>
+    <string name="account_joined">Tham gia %1$s</string>
+    <!-- Create / Login -->
+    <string name="account_create_heading">Tạo tài khoản</string>
+    <string name="account_create_description">Tạo một tài khoản để có những câu chuyện, sự khích lệ và gợi ý thực hành trong tầm tay bạn.</string>
+    <string name="account_login_heading">Đăng nhập</string>
+    <string name="account_login_description">Đăng nhập vào tài khoản của bạn để đọc các câu chuyện có thật, câu chuyện tạo động lực, và các mẹo hữu ích.</string>
+    <string name="account_error_title">Xác thực Thất bại</string>
+    <string name="account_error_user_already_exists">Tài khoản người dùng đã tồn tại.</string>
+    <string name="account_error_user_not_found">Không tìm được tài khoản người dùng.</string>
+    <string name="account_error_not_connected_title">Không có kết nối internet</string>
+    <string name="account_error_not_connected">Vui lòng kiểm tra kết nối internet của bạn và thử lại.</string>
+    <string name="account_error_unknown">Có lỗi khi đăng nhập</string>
+    <!-- Delete Account -->
+    <string name="menu_account_delete">Xóa tài khoản</string>
+    <string name="account_delete_heading">Đừng đi quá sớm</string>
+    <string name="account_delete_description">Nếu bạn xóa tài khoản của mình, bạn sẽ không thể truy cập được các công cụ ưa thích hoặc các hoạt động trong tài khoản.</string>
+    <string name="account_delete_action_delete">Xóa tài khoản của tôi</string>
+    <string name="account_delete_action_cancel">Giữ tài khoản của tôi</string>
+    <string name="account_delete_error">Có lỗi xóa tài khoản của bạn. Đảm bảo rằng bạn đang trực tuyến và thử lại sau.</string>
+    <!-- Activity -->
+    <string name="profile_tab_activity">Hoạt động</string>
+    <string name="account_activity_header">Hoạt động của bạn</string>
+    <plurals name="account_activity_tool_opens" tools:ignore="ImpliedQuantity">
+        <item quantity="other">Mở công cụ</item>
+    </plurals>
+    <plurals name="account_activity_lesson_completions" tools:ignore="ImpliedQuantity">
+        <item quantity="other">Hoàn thành bài học</item>
+    </plurals>
+    <plurals name="account_activity_screen_shares" tools:ignore="ImpliedQuantity">
+        <item quantity="other">Chia sẻ màn hình</item>
+    </plurals>
+    <plurals name="account_activity_languages_used" tools:ignore="ImpliedQuantity">
+        <item quantity="other">Ngôn ngữ sử dụng</item>
+    </plurals>
+    <plurals name="account_activity_sessions" tools:ignore="ImpliedQuantity">
+        <item quantity="other">Phần</item>
+    </plurals>
+    <!-- Badges -->
+    <string name="account_activity_badges_header">Huy hiệu</string>
+    <plurals name="account_activity_badge_tools_opened">
+        <item quantity="other">Đã mở %1$,d công cụ</item>
+    </plurals>
+    <plurals name="account_activity_badge_lessons_completed">
+        <item quantity="other">Đã hoàn thành %1$,d bài học</item>
+    </plurals>
+    <plurals name="account_activity_badge_articles_opened">
+        <item quantity="other">Đã mở %1$,d bài viết</item>
+    </plurals>
+    <plurals name="account_activity_badge_images_shared">
+        <item quantity="other">Đã chia sẻ %1$,d hình ảnh</item>
+    </plurals>
+    <plurals name="account_activity_badge_tips_completed">
+        <item quantity="other">Đã hoàn thành %1$,d gợi ý hướng dẫn</item>
+    </plurals>
+    <!-- Global Activity -->
+    <string name="account_tab_global_activity">Hoạt động toàn cầu</string>
+    <string name="profile_global_activity_heading">%1$s  Hoạt động toàn cầu</string>
+    <string name="profile_activity_unique_users">Người dùng duy nhất</string>
+    <string name="profile_activity_gospel_presentations">Trình bày Phúc Âm</string>
+    <string name="profile_activity_sessions">Phần</string>
+    <string name="profile_activity_countries">Quốc gia</string>
+</resources>

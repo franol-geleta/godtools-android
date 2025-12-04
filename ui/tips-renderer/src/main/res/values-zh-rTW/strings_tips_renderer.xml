@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Training Tips -->
+    <string name="tract_tips_tip_action_next">下一頁</string>
+    <string name="tract_tips_tip_action_close">關閉</string>
+    <!-- Tip Types -->
+    <string name="tract_tips_type_ask">詢問</string>
+    <string name="tract_tips_type_consider">思考</string>
+    <string name="tract_tips_type_prepare">準備</string>
+    <string name="tract_tips_type_quote">金句</string>
+    <string name="tract_tips_type_tip">提示</string>
+    <!-- Settings -->
+    <string name="tool_settings_action_tips_enable">訓練提示</string>
+    <string name="tool_settings_action_tips_disable">隱藏提示</string>
+</resources>

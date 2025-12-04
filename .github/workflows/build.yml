@@ -1,0 +1,158 @@
+name: Build App
+
+on:
+  push:
+    branches: [develop, master, feature/*]
+  pull_request:
+    branches: [develop, master, feature/*]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ORG_GRADLE_PROJECT_releaseBuild: ${{ github.event_name == 'workflow_dispatch' && inputs.triggerRelease && (github.ref == 'refs/heads/master') }}
+  ORG_GRADLE_PROJECT_versionSuffix: >-
+    ${{
+      (github.event_name == 'pull_request' && format('PR{0}', github.event.pull_request.number)) ||
+      ''
+    }}
+
+jobs:
+  build:
+    name: Build App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version-file: ".java-version"
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+      - name: Build App
+        run: ./gradlew bundle --scan
+
+  ktlint:
+    name: ktlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version-file: ".java-version"
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+      - name: Run ktlint
+        run: ./gradlew :build-logic:ktlintCheck ktlintCheck --scan
+      - name: Archive ktlint results
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: ktlint-results
+          path: "**/build/reports/ktlint/"
+
+  lint:
+    name: Lint Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version-file: ".java-version"
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+      - name: Run Lint Checks
+        run: ./gradlew lint --scan
+      - name: Archive lint results
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: lint-results
+          path: "**/build/reports/lint-results*.*"
+
+  tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        testShard: [1, 2, 3, 4]
+    env:
+      ORG_GRADLE_PROJECT_testShard: ${{ matrix.testShard }}
+      ORG_GRADLE_PROJECT_testTotalShards: 4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          lfs: 'true'
+      - name: Cache Maven
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version-file: ".java-version"
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+      - name: Run Unit Tests
+        run: ./gradlew test verifyPaparazzi koverXmlReportDebug koverXmlReportProductionDebug --max-workers 1 --scan
+      - name: Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
+      - name: Archive Unit Test results
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: unit-test-results-${{ matrix.testShard }}
+          path: |
+            **/build/reports/tests/
+            **/build/paparazzi/failures/
+
+  qa_build:
+    name: Deploy QA Build
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'push' && github.ref == 'refs/heads/develop') ||
+      (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'Publish PR QA Build'))
+    needs: [build, ktlint, lint, tests]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Import Firebase API Key
+        env:
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+        run: echo $FIREBASE_API_KEY > firebase/firebase_api_key.json
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version-file: ".java-version"
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+        with:
+          cache-read-only: true
+      - name: Upload QA Build to Firebase
+        run: ./gradlew appDistributionUploadStageQa appDistributionUploadProductionQa -PfirebaseAppDistributionBuild --scan
+        env:
+          ORG_GRADLE_PROJECT_firebaseAppDistributionKeystoreStorePassword: ${{ secrets.BETA_KEYSTORE_PASSWORD }}
+          ORG_GRADLE_PROJECT_firebaseAppDistributionKeystoreKeyPassword: ${{ secrets.BETA_KEYSTORE_PASSWORD }}

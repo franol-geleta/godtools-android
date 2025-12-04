@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Language UI -->
+    <string name="language_settings_app_language_title">Idioma de la aplicación</string>
+    <string name="language_settings_app_language_dialog_message">Has seleccionado %1$s como idioma de tu aplicación. Esto cambiará el idioma de toda la aplicación GodTools. ¿Estás seguro?</string>
+    <string name="language_settings_app_language_dialog_confirm">Cambiar idioma</string>
+    <string name="language_settings_app_language_dialog_dismiss">Olvídalo</string>
+    <!-- Language Settings UI -->
+    <string name="menu_language_settings">Ajustes de idioma</string>
+    <string name="title_language_settings">Ajustes de idioma</string>
+    <string name="language_settings_section_app_language_heading">Idioma de la interfaz de la aplicación</string>
+    <plurals name="language_settings_section_app_language_available">
+        <item quantity="one">%1$,d Idioma disponible</item>
+        <item quantity="other">%1$,d Idiomas disponibles</item>
+    </plurals>
+    <string name="language_settings_section_app_language_description">Establece el idioma en el que deseas que se muestre toda la aplicación.</string>
+    <string name="language_settings_section_offline_heading">Idiomas de herramientas disponibles sin conexión</string>
+    <string name="language_settings_section_offline_description">Descarga todas las herramientas en un idioma para que estén disponibles incluso si no tienes WiFi o servicio móvil. Establece el idioma de la herramienta mediante el botón de opciones dentro de una herramienta.</string>
+    <string name="language_settings_section_offline_action_edit">Editar idiomas descargados</string>
+    <!-- Downloadable Languages UI -->
+    <string name="language_settings_downloadable_languages_search">Buscar idiomas</string>
+    <plurals name="language_settings_downloadable_languages_available_tools">
+        <item quantity="one">%1$d herramienta disponible</item>
+        <item quantity="other">%1$d herramientas disponibles</item>
+    </plurals>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- region Buttons -->
+    <style name="Widget.GodTools.Button.Colored" parent="Widget.AppCompat.Button.Colored" />
+
+    <style name="Widget.GodTools.Button.Colored.Blue">
+        <item name="backgroundTint">@color/gt_blue</item>
+    </style>
+
+    <style name="Widget.GodTools.Button" parent="Widget.MaterialComponents.Button" />
+    <style name="Widget.GodTools.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton" />
+
+    <!-- region Button ThemeOverlays -->
+    <style name="ThemeOverlay.GodTools.Button.Red" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/gt_red</item>
+    </style>
+    <!-- endregion Button ThemeOverlays -->
+    <!-- endregion Buttons -->
+
+    <!-- ProgressBar -->
+    <style name="Widget.GodTools.ProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal" />
+
+    <!-- TabLayout Widgets -->
+    <dimen name="tabs_corner_radius">0dp</dimen>
+    <style name="Widget.GodTools.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="android:background">@drawable/bkg_tabs</item>
+        <item name="tabBackground">@drawable/bkg_tab_label_tintable</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabTextAppearance">@style/TextAppearance.GodTools.TabLayout.Tab</item>
+    </style>
+
+    <style name="TextAppearance.GodTools.TabLayout.Tab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+</resources>

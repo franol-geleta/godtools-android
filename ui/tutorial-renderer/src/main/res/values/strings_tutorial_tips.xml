@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tips Tutorial -->
+    <eat-comment />
+    <string name="tutorial_tips_learn_headline">Learn to share this tool with anyone</string>
+    <string name="tutorial_tips_learn_text">Practice using as many tips as you need to feel confident sharing this tool with others.</string>
+
+    <string name="tutorial_tips_light_headline">Tips to light the way</string>
+    <string name="tutorial_tips_light_text1">On select screens, you\'ll see a variety of icons. Press the icon to reveal a tip that will help you talk about the content of the screen.</string>
+    <string name="tutorial_tips_light_text2">"For the screens with no tips, we recommend reading through the content and discussing as needed. "</string>
+
+    <string name="tutorial_tips_start_headline">Light up the tips</string>
+    <string name="tutorial_tips_start_text">When a tip lights up, you’ve completed that piece of training. You do not need to use every tip in every conversation.</string>
+
+    <string name="tutorial_tips_action_continue">Continue</string>
+    <string name="tutorial_tips_action_skip">Skip</string>
+    <string name="tutorial_tips_action_start">Start Training</string>
+</resources>

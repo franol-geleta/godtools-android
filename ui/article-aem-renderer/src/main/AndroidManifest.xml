@@ -1,0 +1,22 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name="org.cru.godtools.article.aem.ui.AemArticleActivity"
+            android:exported="true"
+            android:screenOrientation="user"
+            android:theme="@style/Theme.GodTools.Tool">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="godtoolsapp.com" />
+                <data android:path="/article/aem" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

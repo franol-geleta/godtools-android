@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Live Share Tutorial -->
+    <string name="tutorial_live_share_description_headline">Compartilhe sua tela</string>
+    <string name="tutorial_live_share_description_text">Esta opção irá enviar a um amigo um link para esta ferramenta. Quando o link for aberto, iniciará uma sessão de compartilhamento de tela.</string>
+    <string name="tutorial_live_share_mirrored_headline">Experiência espelhada</string>
+    <string name="tutorial_live_share_mirrored_text">Quando você navegar na ferramenta no seu celular, a tela do seu amigo responderá igualmente. Isso permite que naveguem pela ferramenta juntos, em dois dispositivos ao mesmo tempo.</string>
+    <string name="tutorial_live_share_start_headline">Comece</string>
+    <string name="tutorial_live_share_start_text">Envie o link para uma ou mais pessoas para iniciar agora uma sessão de compartilhamento de tela.</string>
+    <string name="tutorial_live_share_action_continue">Continuar</string>
+    <string name="tutorial_live_share_action_skip">Pular</string>
+    <string name="tutorial_live_share_action_start">Compartilhar um link</string>
+</resources>

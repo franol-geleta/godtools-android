@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Language UI -->
+    <string name="language_settings_app_language_title">Langue de l\'application</string>
+    <string name="language_settings_app_language_dialog_message">Vous avez choisi %1$s comme langue de l\'application. Ceci changera la langue de toute l\'application GodTools. Êtes-vous sûr ?</string>
+    <string name="language_settings_app_language_dialog_confirm">Changer de langue</string>
+    <string name="language_settings_app_language_dialog_dismiss">Peu importe</string>
+    <!-- Language Settings UI -->
+    <string name="menu_language_settings">Paramètres de langue</string>
+    <string name="title_language_settings">Paramètres de langue</string>
+    <string name="language_settings_section_app_language_heading">Langue de l\'interface de l\'application</string>
+    <plurals name="language_settings_section_app_language_available">
+        <item quantity="one">%1$d Langue disponible</item>
+        <item quantity="other">%1$d Langues disponibles</item>
+    </plurals>
+    <string name="language_settings_section_app_language_description">Définissez la langue dans laquelle vous souhaitez que l\'application s\'affiche.</string>
+    <string name="language_settings_section_offline_heading">Langues de l\'outil disponibles hors ligne</string>
+    <string name="language_settings_section_offline_description">Téléchargez tous les outils dans une langue donnée pour qu\'ils soient disponibles même si vous n\'avez pas de connexion WiFi ou de réseau cellulaire. Définissez la langue de l\'outil à l\'aide du bouton d\'options de l\'outil.</string>
+    <string name="language_settings_section_offline_action_edit">Modifier les langues téléchargées</string>
+    <!-- Downloadable Languages UI -->
+    <string name="language_settings_downloadable_languages_search">Recherche de langues</string>
+    <plurals name="language_settings_downloadable_languages_available_tools">
+        <item quantity="one">%1$d Outil disponible</item>
+        <item quantity="other">%1$d Outils disponibles</item>
+    </plurals>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Language UI -->
+    <string name="language_settings_app_language_title">Lietotnes valoda</string>
+    <string name="language_settings_app_language_dialog_message">Tu izvēlējies %1$s valodu – līdz ar to mainīsies lietotnes \'GodTools\' valoda kopumā. Vai esi drošs, ka to vēlies?</string>
+    <string name="language_settings_app_language_dialog_confirm">Mainīt valodu</string>
+    <string name="language_settings_app_language_dialog_dismiss">Atcelt</string>
+    <!-- Language Settings UI -->
+    <string name="menu_language_settings">Valodas iestatījumi</string>
+    <string name="title_language_settings">Valodas iestatījumi</string>
+    <string name="language_settings_section_app_language_heading">Lietotnes valoda</string>
+    <plurals name="language_settings_section_app_language_available">
+        <item quantity="zero">Pieejamo valodu skaits: %1$d</item>
+        <item quantity="one">Pieejamo valodu skaits: %1$d</item>
+        <item quantity="other">Pieejamo valodu skaits: %1$d</item>
+    </plurals>
+    <string name="language_settings_section_app_language_description">Iestati sev vēlamo valodu, kurā pārslēgt lietotni.</string>
+    <string name="language_settings_section_offline_heading">Rīka valodas pieejamas bezsaistē</string>
+    <string name="language_settings_section_offline_description">Lejupielādē visus rīkus izvēlētā valodā, lai tie būtu pieejami bezsaistē. Rīka valodas izvēlei izmanto rīka iestatījumu pogu.</string>
+    <string name="language_settings_section_offline_action_edit">Labot lejupielādēto valodu pieejamību</string>
+    <!-- Downloadable Languages UI -->
+    <string name="language_settings_downloadable_languages_search">Meklēt valodu</string>
+    <plurals name="language_settings_downloadable_languages_available_tools">
+        <item quantity="zero">Pieejamo rīku skaits: %1$d</item>
+        <item quantity="one">Pieejamo rīku skaits: %1$d</item>
+        <item quantity="other">Pieejamo rīku skaits: %1$d</item>
+    </plurals>
+</resources>

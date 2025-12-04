@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Onboarding Tutorial -->
+    <string name="tutorial_onboarding_change_language">Choisir la langue</string>
+    <string name="tutorial_onboarding_welcome">Bienvenue</string>
+    <string name="tutorial_onboarding_welcome_2">Prête pour toutes les conversations</string>
+    <string name="tutorial_onboarding_welcome_action_video">Regarder la vidéo</string>
+    <string name="tutorial_onboarding_conversations_headline">Parlez de Dieu avec n\'importe qui</string>
+    <string name="tutorial_onboarding_conversations_subhead">GodTools vous aide à avoir des conversations profondes sur Dieu.</string>
+    <string name="tutorial_onboarding_prepare_headline">Préparez-vous pour les instants qui comptent</string>
+    <string name="tutorial_onboarding_prepare_subhead">Apprenez comment intégrer naturellement dans votre vie les conversations sur la foi.</string>
+    <string name="tutorial_onboarding_share_headline">Aidez quelqu\'un à découvrir Jésus</string>
+    <string name="tutorial_onboarding_share_subhead">GodTools est votre guide pour communiquer l\'Évangile de manière claire et pertinente.</string>
+    <string name="tutorial_onboarding_action_begin">Commencez</string>
+    <string name="tutorial_onboarding_action_next">Suivant</string>
+    <string name="tutorial_onboarding_action_skip">Passer</string>
+    <string name="tutorial_onboarding_action_start">Commencez</string>
+</resources>

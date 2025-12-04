@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <activity
+            android:name="org.cru.godtools.tract.activity.TractActivity"
+            android:exported="true"
+            android:screenOrientation="@integer/default_screen_orientation"
+            android:theme="@style/Theme.GodTools.Tract.Activity.Tract">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="knowgod.com" />
+                <data android:pathPattern="/.*/tool/v1/.*" />
+
+                <!-- Legacy deep links -->
+                <data android:pathPattern="/.*/connectingwithgod.*" />
+                <data android:pathPattern="/.*/emojitool.*" />
+<!--                <data android:pathPattern="/.*/emojitoolholiday.*" />-->
+                <data android:pathPattern="/.*/filterofhope.*" />
+                <data android:pathPattern="/.*/fantasticfacts.*" />
+                <data android:pathPattern="/.*/fourlaws.*" />
+                <data android:pathPattern="/.*/growth.*" />
+                <data android:pathPattern="/.*/honorrestored.*" />
+                <data android:pathPattern="/.*/kgp.*" />
+<!--                <data android:pathPattern="/.*/kgp-us.*" />-->
+<!--                <data android:pathPattern="/.*/kgpagape.*" />-->
+<!--                <data android:pathPattern="/.*/kgpreconciled.*" />-->
+                <data android:pathPattern="/.*/lifewithhim.*" />
+                <data android:pathPattern="/.*/poweroverfear.*" />
+                <data android:pathPattern="/.*/satisfied.*" />
+                <data android:pathPattern="/.*/spiritfilledlife.*" />
+                <data android:pathPattern="/.*/teachmetoshare.*" />
+                <data android:pathPattern="/.*/thefour.*" />
+<!--                <data android:pathPattern="/.*/thefourusa.*" />-->
+<!--                <data android:pathPattern="/.*/thefourvietnam.*" />-->
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="godtoolsapp.com" />
+                <data android:host="godtools.dynalinks.app" />
+                <data android:pathPattern="/deeplink/tool/tract/.*/.*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="godtools" />
+                <data android:host="${hostGodtoolsCustomUri}" />
+                <data android:pathPattern="/tool/tract/.*/.*" />
+            </intent-filter>
+            <meta-data
+                android:name="default-url"
+                android:value="https://knowgod.com/en/kgp/?useDeviceLanguage=true" />
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Language UI -->
+    <eat-comment />
+    <string name="language_settings_app_language_title">App Language</string>
+    <string name="language_settings_app_language_dialog_message">You have selected %1$s as your app language. This will change the language of the whole GodTools app. Are you sure?</string>
+    <string name="language_settings_app_language_dialog_confirm">Change language</string>
+    <string name="language_settings_app_language_dialog_dismiss">Nevermind</string>
+
+    <!-- Language Settings UI -->
+    <eat-comment />
+    <string name="menu_language_settings">Language settings</string>
+    <string name="title_language_settings">Language Settings</string>
+    <string name="language_settings_section_app_language_heading">App interface language</string>
+    <plurals name="language_settings_section_app_language_available">
+        <item quantity="one">%1$,d Language available</item>
+        <item quantity="other">%1$,d Languages available</item>
+    </plurals>
+    <string name="language_settings_section_app_language_description">Set the language you’d like the whole app to be displayed in.</string>
+    <string name="language_settings_section_offline_heading">Tool languages available offline</string>
+    <string name="language_settings_section_offline_description">Download all the tools in a language to make them available even if you’re out of WiFi or cell service. Set the tool language via the options button within a tool.</string>
+    <string name="language_settings_section_offline_action_edit">Edit downloaded languages</string>
+
+    <!-- Downloadable Languages UI -->
+    <eat-comment />
+    <string name="language_settings_downloadable_languages_search">Search languages</string>
+    <plurals name="language_settings_downloadable_languages_available_tools">
+        <item quantity="one">%1$d Tool available</item>
+        <item quantity="other">%1$d Tools available</item>
+    </plurals>
+</resources>

@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Permissions required for Facebook Analytics -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- region Firebase Analytics Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- endregion Firebase Analytics Permissions -->
+
+    <application>
+        <meta-data
+            android:name="google_analytics_automatic_screen_reporting_enabled"
+            android:value="false" />
+    </application>
+</manifest>

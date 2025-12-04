@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- optInNotification -->
+    <string name="opt_in_notification_title">Recebe dicas e encorajamento</string>
+    <string name="opt_in_notification_body">Fique preparado para as conversas. Permita notificações hoje.</string>
+    <string name="opt_in_notification_allow_notifications">Permitir Notificações</string>
+    <string name="opt_in_notification_notification_settings">Configurações de notificações</string>
+    <string name="opt_in_notification_maybe_later">Talvez mais tarde</string>
+    <!-- Navigation Menu -->
+    <string name="menu_heading_get_started">Comece</string>
+    <string name="menu_heading_account">Conta</string>
+    <string name="menu_login">Acessar</string>
+    <string name="menu_signup">Criar conta</string>
+    <string name="menu_logout">Sair</string>
+    <string name="menu_heading_support">Suporte</string>
+    <string name="menu_feedback">Enviar feedback</string>
+    <string name="menu_report_bug">Relatar um erro</string>
+    <string name="menu_question">Faça uma pergunta</string>
+    <string name="menu_heading_share">Compartilhar</string>
+    <string name="menu_review">Deixe a sua opinião</string>
+    <string name="menu_share_story">Compartilhe uma história conosco</string>
+    <string name="menu_share_godtools">Compartilhe o GodTools</string>
+    <string name="share_app_message">Baixe o aplicativo GodTools: https://godtoolsapp.com \n\n
+
+Há uma versão online aqui: https://knowgod.com/</string>
+    <string name="share_story_subject">História do GodTools</string>
+    <string name="menu_heading_about">Sobre isso</string>
+    <string name="menu_terms_of_use">Termos de uso</string>
+    <string name="menu_privacy_policy">Política de privacidade</string>
+    <string name="menu_copyright">Informações sobre Direitos Autorais</string>
+    <string name="menu_version">Versão: %1$s (%2$d)</string>
+    <!-- Lessons -->
+    <string name="nav_lessons">Lições</string>
+    <string name="dashboard_lessons_header_title">Lições feitas para você</string>
+    <string name="dashboard_lessons_header_description">Ideias práticas para construir relacionamentos e iniciar conversas relevantes.</string>
+    <string name="dashboard_lessons_section_filter_label">Lições em:</string>
+    <plurals name="dashboard_lessons_section_filter_available_lessons">
+        <item quantity="one">Sessōes %1$d disponível</item>
+        <item quantity="other">Sessōes %1$d disponível</item>
+    </plurals>
+    <string name="dashboard_lessons_progress_completed">Concluído</string>
+    <string name="dashboard_lessons_progress_in_progress">%1$d%% concluído</string>
+    <!-- Home -->
+    <string name="nav_favorite_tools">Favoritos</string>
+    <string name="dashboard_home_header_title">Bem-vindo(a) ao GodTools</string>
+    <string name="dashboard_home_section_featured_lesson">Lição em destaque</string>
+    <string name="dashboard_home_section_favorites_title">Suas ferramentas favoritas</string>
+    <string name="dashboard_home_section_favorites_no_tools_title">Nenhuma ferramenta favorita a exibir</string>
+    <string name="dashboard_home_section_favorites_no_tools_description">Toque no ícone do coração para marcar uma ferramenta como favorita e permitir que ela fique disponível offline.</string>
+    <string name="dashboard_home_section_favorites_action_view_all">Ver tudo &gt;</string>
+    <string name="dashboard_home_section_favorites_action_all_tools">Ir para Ferramentas</string>
+    <string name="tools_list_favorites_banner_text">Para ficar com uma ferramenta disponível offline, toque no ícone do coração para a adicioná-la aos seus favoritos.</string>
+    <string name="tools_list_favorites_banner_action_dismiss">Descartar</string>
+    <!-- All Tools -->
+    <string name="nav_all_tools">Ferramentas</string>
+    <string name="dashboard_tools_section_filter_label">Filtro</string>
+    <string name="dashboard_tools_section_filter_category_any">Qualquer categoria</string>
+    <string name="dashboard_tools_section_filter_language_any">Qualquer idioma</string>
+    <plurals name="dashboard_tools_section_filter_available_tools">
+        <item quantity="one">Ferramenta %1$d disponível</item>
+        <item quantity="other">Ferramentas %1$d disponíveis</item>
+    </plurals>
+    <string name="dashboard_tools_section_filter_available_tools_all">Todas as Ferramentas disponíveis</string>
+    <string name="dashboard_tools_section_categories_label">Categorias</string>
+    <string name="dashboard_tools_section_categories_all">Todas as Ferramentas</string>
+    <string name="dashboard_tools_section_spotlight_label">Ferramentas em Destaque</string>
+    <string name="dashboard_tools_section_spotlight_description">Aqui estão umas ferramentas que achamos que você poderá apreciar</string>
+    <!-- Tool Cards -->
+    <string name="tools_list_remove_favorite_dialog_title">Quer remover \"%1$s\" dos Favoritos?</string>
+    <string name="tools_list_remove_favorite_dialog_confirm">Remover</string>
+    <string name="tools_list_remove_favorite_dialog_dismiss">Cancelar</string>
+    <string name="tool_card_accessibility_language_available">Disponível</string>
+    <string name="tool_card_accessibility_language_unavailable">Não disponível</string>
+    <string name="action_tools_about">Detalhes</string>
+    <string name="action_tools_open">Abrir</string>
+    <!-- In App Update -->
+    <string name="play_update_available">Atualização disponível</string>
+    <string name="play_update_available_action">Baixar</string>
+    <string name="play_update_downloaded">Atualização baixada</string>
+    <string name="play_update_downloaded_action">Recarregar</string>
+</resources>

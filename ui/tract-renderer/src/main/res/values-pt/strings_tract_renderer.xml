@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_install">Instalar</string>
+    <string name="menu_share_tract">Enviar esta ferramenta</string>
+    <string name="tract_card_previous">Anterior</string>
+    <string name="tract_card_next">Próximo</string>
+    <!-- Live Sharing -->
+    <string name="menu_live_share_publish">Compartilhe a sua tela</string>
+    <string name="menu_live_share_active">Compartilhamento de Tela Ativo</string>
+    <string name="share_tool_message_tract_live_share">Oi. Acompanhe-me no GodTools através do compartilhamento de tela. Aqui está o link: %1$s\n\nSe você receber esta mensagem muito tarde, o link poderá não funcionar mais. Podemos tentar novamente outra hora.</string>
+    <string name="tract_live_share_starting">Iniciar Compartilhamento de Tela…</string>
+    <string name="tract_live_share_unable_to_connect">Não foi possível conectar-se ao Compartilhamento de Tela</string>
+    <string name="tract_live_share_exit_dialog_message">Sair da sessão de compartilhamento remoto agora?</string>
+    <string name="tract_live_share_exit_dialog_confirm">Sair</string>
+    <string name="tract_live_share_exit_dialog_cancel">Cancelar</string>
+</resources>

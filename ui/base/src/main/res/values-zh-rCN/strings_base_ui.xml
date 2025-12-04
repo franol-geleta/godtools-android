@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_unable_to_launch_activity">无法打开%s</string>
+    <!-- Tool Categories -->
+    <string name="tool_category_gospel">福音邀请</string>
+    <string name="tool_category_articles">文章</string>
+    <string name="tool_category_conversation_starter">对话开场白</string>
+    <string name="tool_category_growth">基督徒成长</string>
+    <string name="tool_category_training">培训</string>
+    <!-- Sharing -->
+</resources>

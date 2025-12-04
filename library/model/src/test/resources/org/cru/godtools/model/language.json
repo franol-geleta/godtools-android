@@ -1,0 +1,12 @@
+{
+  "data": {
+    "id": "1",
+    "type": "language",
+    "attributes": {
+      "code": "en",
+      "name": "English",
+      "force-language-name": true,
+      "direction": "ltr"
+    }
+  }
+}

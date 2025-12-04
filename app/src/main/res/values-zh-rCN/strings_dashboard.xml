@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- optInNotification -->
+    <string name="opt_in_notification_title">获取实用技巧和励志金句</string>
+    <string name="opt_in_notification_body">随时准备开启对话。 立即启用通知。</string>
+    <string name="opt_in_notification_allow_notifications">启用通知</string>
+    <string name="opt_in_notification_notification_settings">通知设置</string>
+    <string name="opt_in_notification_maybe_later">也许稍后</string>
+    <!-- Navigation Menu -->
+    <string name="menu_heading_get_started">开始体验</string>
+    <string name="menu_tutorial">教程</string>
+    <string name="menu_heading_account">账户</string>
+    <string name="menu_login">登录</string>
+    <string name="menu_signup">创建账户</string>
+    <string name="menu_logout">退出</string>
+    <string name="menu_heading_support">支持</string>
+    <string name="menu_feedback">发送反馈</string>
+    <string name="menu_report_bug">报告错误</string>
+    <string name="menu_question">提问</string>
+    <string name="menu_heading_share">分享</string>
+    <string name="menu_review">发表评论</string>
+    <string name="menu_share_story">与我们分享故事</string>
+    <string name="menu_share_godtools">分享GodTools</string>
+    <string name="share_app_message">下载GodTools应用：https://godtoolsapp.com \n\n
+
+网页版地址：https://knowgod.com/</string>
+    <string name="share_story_subject">GodTools故事</string>
+    <string name="menu_heading_about">关于</string>
+    <string name="menu_terms_of_use">使用条款</string>
+    <string name="menu_privacy_policy">隐私政策</string>
+    <string name="menu_copyright">版权信息</string>
+    <string name="menu_version">版本：%1$s (%2$d)</string>
+    <!-- Lessons -->
+    <string name="nav_lessons">课程 </string>
+    <string name="dashboard_lessons_header_title">为你制定的课程</string>
+    <string name="dashboard_lessons_header_description">建立关系，开启有意义对话的实用点子</string>
+    <string name="dashboard_lessons_section_filter_label">课程所用语言：</string>
+    <plurals name="dashboard_lessons_section_filter_available_lessons">
+        <item quantity="other">%1$d 种可用课程</item>
+    </plurals>
+    <string name="dashboard_lessons_progress_completed">已完成</string>
+    <string name="dashboard_lessons_progress_in_progress">%1$d%% 完成</string>
+    <!-- Home -->
+    <string name="nav_favorite_tools">收藏夹</string>
+    <string name="dashboard_home_header_title">欢迎来到Godtools信仰分享工具</string>
+    <string name="dashboard_home_section_featured_lesson">特色课程</string>
+    <string name="dashboard_home_section_favorites_title">你最喜欢的工具</string>
+    <string name="dashboard_home_section_favorites_no_tools_title">没有最喜欢的工具来显示</string>
+    <string name="dashboard_home_section_favorites_no_tools_description">点击心形图标来收藏一个工具，并使其离线可用。</string>
+    <string name="dashboard_home_section_favorites_action_view_all">查看全部 &gt;</string>
+    <string name="dashboard_home_section_favorites_action_all_tools">去到工具包</string>
+    <string name="tools_list_favorites_banner_text">要离线使用某个工具，请点击心形图标将其添加到收藏夹。</string>
+    <string name="tools_list_favorites_banner_action_dismiss">取消</string>
+    <!-- All Tools -->
+    <string name="nav_all_tools">工具</string>
+    <string name="dashboard_tools_section_filter_label">筛选</string>
+    <string name="dashboard_tools_section_filter_category_any">任何类别</string>
+    <string name="dashboard_tools_section_filter_language_any">任何语言</string>
+    <plurals name="dashboard_tools_section_filter_available_tools">
+        <item quantity="other">%1$d个工具可用</item>
+    </plurals>
+    <string name="dashboard_tools_section_filter_available_tools_all">所有工具可用</string>
+    <string name="dashboard_tools_section_categories_label">分类</string>
+    <string name="dashboard_tools_section_categories_all">所有工具</string>
+    <string name="dashboard_tools_section_spotlight_label">热门工具</string>
+    <string name="dashboard_tools_section_spotlight_description">这是我们觉得你可能喜欢的一些工具</string>
+    <!-- Tool Cards -->
+    <string name="tools_list_remove_favorite_dialog_title">从收藏夹中删除 “%1$s”？</string>
+    <string name="tools_list_remove_favorite_dialog_confirm">删除</string>
+    <string name="tools_list_remove_favorite_dialog_dismiss">取消</string>
+    <string name="tool_card_accessibility_language_available">可用</string>
+    <string name="tool_card_accessibility_language_unavailable">语版本不可用</string>
+    <string name="action_tools_about">细节</string>
+    <string name="action_tools_open">打开</string>
+    <!-- In App Update -->
+    <string name="play_update_available">有可用更新</string>
+    <string name="play_update_available_action">下载</string>
+    <string name="play_update_downloaded">更新已下载</string>
+    <string name="play_update_downloaded_action">重新加载</string>
+</resources>
